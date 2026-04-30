@@ -1,0 +1,242 @@
+{
+  "searched_at": "2026-04-30T07:37:20.136925+00:00",
+  "search_queries": [
+    "foreigner life in Korea vlog",
+    "living in Korea as a foreigner",
+    "culture shock Korea foreigner",
+    "American living in Korea",
+    "European living in Korea"
+  ],
+  "excluded_languages": [
+    "ko"
+  ],
+  "total_found": 15,
+  "transcript_stats": {
+    "success": 7,
+    "no_transcript": 3,
+    "skipped": 5
+  },
+  "videos": [
+    {
+      "rank": 1,
+      "video_id": "abc001",
+      "title": "Things That SHOCKED Me About Living in Korea",
+      "channel": "Dave from USA",
+      "language": "en",
+      "published_at": "2024-11-15T10:00:00Z",
+      "description": "American Dave shares the most shocking things about Korean daily life including delivery, internet speed, and work culture.",
+      "url": "https://www.youtube.com/watch?v=abc001",
+      "views": 3200000,
+      "likes": 145000,
+      "comments": 8900,
+      "search_query": "culture shock Korea foreigner",
+      "main_topics": [
+        "culture shock",
+        "daily life"
+      ],
+      "ranking_score": 0.95,
+      "ranking_reason": "Highest views, recent upload",
+      "has_transcript": true,
+      "transcript_language": "en"
+    },
+    {
+      "rank": 2,
+      "video_id": "abc002",
+      "title": "Living Alone in Seoul as a Foreigner — My Daily Routine",
+      "channel": "Sarah in Seoul",
+      "language": "en",
+      "published_at": "2024-12-01T09:00:00Z",
+      "description": "British Sarah shows her daily routine living alone in Seoul — convenience stores, Han River picnics, and more.",
+      "url": "https://www.youtube.com/watch?v=abc002",
+      "views": 2800000,
+      "likes": 132000,
+      "comments": 7200,
+      "search_query": "living in Korea as a foreigner",
+      "main_topics": [
+        "solo living",
+        "daily routine"
+      ],
+      "ranking_score": 0.91,
+      "ranking_reason": "Recent upload, high engagement",
+      "has_transcript": true,
+      "transcript_language": "en"
+    },
+    {
+      "rank": 3,
+      "video_id": "abc003",
+      "title": "Korean Work Culture SHOCKED Me (Brazilian Perspective)",
+      "channel": "Felipe Korea Life",
+      "language": "en",
+      "published_at": "2024-10-20T08:00:00Z",
+      "description": "Brazilian Felipe talks about Korean work culture — overtime, hoesik (work dinners), and the pressure to work fast.",
+      "url": "https://www.youtube.com/watch?v=abc003",
+      "views": 2400000,
+      "likes": 98000,
+      "comments": 6100,
+      "search_query": "expat Korea daily life",
+      "main_topics": [
+        "work culture",
+        "hoesik"
+      ],
+      "ranking_score": 0.87,
+      "ranking_reason": "Work culture topic high interest",
+      "has_transcript": true,
+      "transcript_language": "en"
+    },
+    {
+      "rank": 4,
+      "video_id": "abc004",
+      "title": "10 Things That AMAZED Me About Korean Convenience Stores",
+      "channel": "Emma Seoul Diary",
+      "language": "en",
+      "published_at": "2025-01-10T11:00:00Z",
+      "description": "Australian Emma discovers 10 amazing things about Korean convenience stores that don't exist back home.",
+      "url": "https://www.youtube.com/watch?v=abc004",
+      "views": 1900000,
+      "likes": 87000,
+      "comments": 5400,
+      "search_query": "foreigner life in Korea vlog",
+      "main_topics": [
+        "convenience store",
+        "culture shock"
+      ],
+      "ranking_score": 0.83,
+      "ranking_reason": "Convenience store content popular",
+      "has_transcript": true,
+      "transcript_language": "en"
+    },
+    {
+      "rank": 5,
+      "video_id": "abc005",
+      "title": "I Went to a Korean Hospital — Here's What Happened",
+      "channel": "Tom's Korea",
+      "language": "en",
+      "published_at": "2024-09-05T14:00:00Z",
+      "description": "Canadian Tom visits a Korean hospital for the first time and is blown away by the low cost and fast service.",
+      "url": "https://www.youtube.com/watch?v=abc005",
+      "views": 1750000,
+      "likes": 79000,
+      "comments": 4800,
+      "search_query": "American living in Korea",
+      "main_topics": [
+        "healthcare",
+        "cost of living"
+      ],
+      "ranking_score": 0.79,
+      "ranking_reason": "Healthcare topic generates strong reactions",
+      "has_transcript": true,
+      "transcript_language": "en"
+    },
+    {
+      "rank": 6,
+      "video_id": "abc006",
+      "title": "Finding an Apartment in Korea as a Foreigner (Jeonse explained)",
+      "channel": "Lena Korea Vlog",
+      "language": "en",
+      "published_at": "2024-08-22T10:00:00Z",
+      "description": "German Lena explains the confusing jeonse housing system and how she finally found her apartment in Seoul.",
+      "url": "https://www.youtube.com/watch?v=abc006",
+      "views": 1600000,
+      "likes": 71000,
+      "comments": 4200,
+      "search_query": "European living in Korea",
+      "main_topics": [
+        "housing",
+        "jeonse"
+      ],
+      "ranking_score": 0.76,
+      "ranking_reason": "Housing info high value",
+      "has_transcript": true,
+      "transcript_language": "en"
+    },
+    {
+      "rank": 7,
+      "video_id": "abc007",
+      "title": "Why It's HARD to Make Korean Friends (Honest Truth)",
+      "channel": "Mike from LA",
+      "language": "en",
+      "published_at": "2025-02-14T09:00:00Z",
+      "description": "LA's Mike shares his honest experience trying to make Korean friends and the cultural barriers involved.",
+      "url": "https://www.youtube.com/watch?v=abc007",
+      "views": 1500000,
+      "likes": 68000,
+      "comments": 9800,
+      "search_query": "foreigner life in Korea vlog",
+      "main_topics": [
+        "friendship",
+        "social culture"
+      ],
+      "ranking_score": 0.74,
+      "ranking_reason": "Very high comment count — emotional topic",
+      "has_transcript": true,
+      "transcript_language": "en"
+    },
+    {
+      "rank": 8,
+      "video_id": "abc008",
+      "title": "Korean Food Delivery Changed My Life (30min delivery??)",
+      "channel": "Julia Seoul Life",
+      "language": "en",
+      "published_at": "2025-01-28T12:00:00Z",
+      "description": "French Julia tries Korean food delivery apps for the first time and can't believe the 30-minute delivery time.",
+      "url": "https://www.youtube.com/watch?v=abc008",
+      "views": 1350000,
+      "likes": 62000,
+      "comments": 3800,
+      "search_query": "culture shock Korea foreigner",
+      "main_topics": [
+        "food delivery",
+        "convenience"
+      ],
+      "ranking_score": 0.71,
+      "ranking_reason": "Food delivery trend",
+      "has_transcript": false,
+      "transcript_language": null
+    },
+    {
+      "rank": 9,
+      "video_id": "abc009",
+      "title": "My First Time at a Korean Jimjilbang (Sauna) 🇰🇷",
+      "channel": "Alex Korea Adventure",
+      "language": "en",
+      "published_at": "2024-07-18T15:00:00Z",
+      "description": "New Zealander Alex experiences a Korean jimjilbang (sauna) for the first time — awkward but amazing!",
+      "url": "https://www.youtube.com/watch?v=abc009",
+      "views": 1200000,
+      "likes": 55000,
+      "comments": 3400,
+      "search_query": "foreigner life in Korea vlog",
+      "main_topics": [
+        "jimjilbang",
+        "bathing culture"
+      ],
+      "ranking_score": 0.68,
+      "ranking_reason": "Unique Korean culture content",
+      "has_transcript": false,
+      "transcript_language": null
+    },
+    {
+      "rank": 10,
+      "video_id": "abc010",
+      "title": "Korea's Cafe Culture — An Honest Review from a European",
+      "channel": "Sophie in Korea",
+      "language": "en",
+      "published_at": "2025-03-05T10:00:00Z",
+      "description": "Belgian Sophie reviews Korean cafe culture, study cafes, and theme cafes from a European perspective.",
+      "url": "https://www.youtube.com/watch?v=abc010",
+      "views": 980000,
+      "likes": 44000,
+      "comments": 2900,
+      "search_query": "European living in Korea",
+      "main_topics": [
+        "cafe culture",
+        "study culture"
+      ],
+      "ranking_score": 0.64,
+      "ranking_reason": "Cafe culture sustained interest",
+      "has_transcript": false,
+      "transcript_language": null
+    }
+  ],
+  "trend_analysis": "Foreign-language content about Korea focuses heavily on: (1) Practical shock moments — delivery speed, internet speed, hospital costs creating strong emotional reactions. (2) Social/human connection topics — making Korean friends, workplace culture, loneliness — generating the highest comment counts. (3) Unique Korean institutions — jimjilbang, PC rooms, convenience stores — unique enough to drive curiosity clicks. Videos with personal, honest narratives ('I tried...', 'shocked me', 'honest truth') dramatically outperform informational content."
+}

@@ -77,7 +77,12 @@ def find_episode_dir(episodes_dir: Path, episode_id: str) -> Path | None:
 
 def create_episode_dir(episodes_dir: Path, episode_id: str, topic_data: dict) -> Path:
     from slugify import slugify
-    title_slug = slugify(topic_data.get("title", "untitled"), allow_unicode=False, max_length=40)
+    # english_title이 있으면 영어 번역명 사용, 없으면 한국어 title 슬러그화 (로마자 변환)
+    english_title = topic_data.get("english_title", "").strip()
+    if english_title:
+        title_slug = slugify(english_title, allow_unicode=False, max_length=50)
+    else:
+        title_slug = slugify(topic_data.get("title", "untitled"), allow_unicode=False, max_length=40)
     ep_dir = episodes_dir / f"{episode_id}_{title_slug}"
     ep_dir.mkdir(parents=True, exist_ok=True)
     return ep_dir

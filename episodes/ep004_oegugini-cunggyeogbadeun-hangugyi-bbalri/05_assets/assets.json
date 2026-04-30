@@ -1,0 +1,182 @@
+[
+  {
+    "scene_id": 1,
+    "section": "인트로",
+    "script_excerpt": "한국에 온 첫날, 저는 배달 음식을 시켰어요",
+    "duration_seconds": 6,
+    "visual_type": "b-roll",
+    "description": "진행자가 스마트폰으로 배달 앱을 열며 설레는 표정으로 카메라를 바라봄",
+    "image_prompt": "A foreigner sitting in a Korean apartment, excitedly opening a food delivery app on smartphone, cozy room, warm lighting, realistic photo style",
+    "notes": "첫 장면 — 밝고 친근한 톤으로 시작"
+  },
+  {
+    "scene_id": 2,
+    "section": "인트로",
+    "script_excerpt": "30분 후에 도착했는데...",
+    "duration_seconds": 5,
+    "visual_type": "b-roll",
+    "description": "초인종 울리는 소리와 함께 문을 여는 외국인, 배달기사 모습",
+    "image_prompt": "Korean delivery person handing food bag to a surprised foreigner at apartment door, evening light, realistic",
+    "notes": "배경음 효과: 초인종 소리 + 경쾌한 BGM 등장"
+  },
+  {
+    "scene_id": 3,
+    "section": "인트로",
+    "script_excerpt": "이 나라가 뭔가 다르다는 걸 직감했어요",
+    "duration_seconds": 4,
+    "visual_type": "자막",
+    "description": "화면 중앙 타이틀: '외국인이 충격받은 한국의 빨리빨리 문화' — 굵은 폰트, 흰색+빨간 강조",
+    "image_prompt": "",
+    "notes": "오프닝 타이틀 카드, 0.5초 줌인 효과"
+  },
+  {
+    "scene_id": 4,
+    "section": "본론1",
+    "script_excerpt": "배달 앱 주문, 예상 도착 시간 화면",
+    "duration_seconds": 6,
+    "visual_type": "인서트이미지",
+    "description": "스마트폰 화면 녹화: 배달의민족 앱에서 '예상 도착 28분' 표시 클로즈업",
+    "image_prompt": "Smartphone screen showing Korean food delivery app with '28 minutes' delivery time, close-up, realistic",
+    "notes": "화면 녹화 또는 재연 — 앱 UI 선명하게"
+  },
+  {
+    "scene_id": 5,
+    "section": "본론1",
+    "script_excerpt": "⏱ 한국 평균 배달 시간 28분 / 미국 45~90분 / 유럽 60분+",
+    "duration_seconds": 5,
+    "visual_type": "애니메이션",
+    "description": "인포그래픽: 가로 막대 그래프 애니메이션 — 한국(28분, 짧은 막대)vs 미국(60분)vs 유럽(75분)",
+    "image_prompt": "Clean infographic comparing delivery times: Korea 28min vs USA 60min vs Europe 75min, bar chart, white background",
+    "notes": "2초 빌드업 애니메이션, 한국 막대에 하이라이트"
+  },
+  {
+    "scene_id": 6,
+    "section": "본론1",
+    "script_excerpt": "진짜로 28분 만에 왔거든요",
+    "duration_seconds": 5,
+    "visual_type": "b-roll",
+    "description": "배달 음식 받아서 테이블에 펼치는 모습, 음식 양과 신선함 강조",
+    "image_prompt": "Korean delivery food spread on table, foreigner looking amazed, various dishes including chicken and rice, warm lighting",
+    "notes": "음식 클로즈업으로 식욕 자극"
+  },
+  {
+    "scene_id": 7,
+    "section": "본론1",
+    "script_excerpt": "밤 11시에 주문하면 다음 날 새벽 6시에",
+    "duration_seconds": 5,
+    "visual_type": "b-roll",
+    "description": "새벽 아파트 복도에 쿠팡 새벽배송 박스가 놓여 있는 모습",
+    "image_prompt": "Early morning Korean apartment hallway with fresh grocery delivery box outside door, 6am ambience, realistic",
+    "notes": "새벽 느낌의 파란 톤 조명"
+  },
+  {
+    "scene_id": 8,
+    "section": "본론2",
+    "script_excerpt": "인터넷 속도 측정 앱 화면 — 숫자 올라가는 모습",
+    "duration_seconds": 6,
+    "visual_type": "인서트이미지",
+    "description": "스마트폰 속도 측정 앱 화면: 다운로드 950Mbps 표시, 외국인의 놀란 표정 반응",
+    "image_prompt": "Smartphone showing internet speed test result of 950Mbps in Korea, foreigner reacting with surprise, cafe background",
+    "notes": "리액션 컷 필수 — 놀란 표정 클로즈업"
+  },
+  {
+    "scene_id": 9,
+    "section": "본론2",
+    "script_excerpt": "🌐 한국 평균 1Gbps — 세계 최상위",
+    "duration_seconds": 4,
+    "visual_type": "자막",
+    "description": "지구본 아이콘 + '한국 인터넷 속도 세계 1~2위' 자막 팝업, 민트 컬러 강조",
+    "image_prompt": "",
+    "notes": "통계 자막 — 출처 작게 표기 권장"
+  },
+  {
+    "scene_id": 10,
+    "section": "본론2",
+    "script_excerpt": "한국 지하철 안에서 4K 영상이 버퍼링 없이",
+    "duration_seconds": 6,
+    "visual_type": "b-roll",
+    "description": "지하철 내부에서 스마트폰으로 4K 영상 시청하는 외국인, 주변 한국인들도 각자 스마트폰 사용",
+    "image_prompt": "Foreigner watching 4K video on smartphone inside Seoul subway, no buffering indicator, other passengers on phones, realistic",
+    "notes": "지하철 터널 진입 타이밍에 맞춰 컷"
+  },
+  {
+    "scene_id": 11,
+    "section": "본론3",
+    "script_excerpt": "한국 찌개 가게에서는 주문 5분 만에",
+    "duration_seconds": 5,
+    "visual_type": "b-roll",
+    "description": "뚝배기 찌개가 펄펄 끓으며 서빙되는 클로즈업, 김이 모락모락",
+    "image_prompt": "Korean jjigae stew boiling in clay pot being served at restaurant table, steam rising, close-up, appetizing",
+    "notes": "음식 소리(끓는 소리) 효과음 사용"
+  },
+  {
+    "scene_id": 12,
+    "section": "본론3",
+    "script_excerpt": "🍽 한국 식당 평균 서빙 시간: 5~10분",
+    "duration_seconds": 4,
+    "visual_type": "자막",
+    "description": "타이머 아이콘과 함께 '5~10분' 자막, 프랑스 파스타 '30분'과 비교 표시",
+    "image_prompt": "",
+    "notes": "비교 자막은 2단 구성으로"
+  },
+  {
+    "scene_id": 13,
+    "section": "본론3",
+    "script_excerpt": "집 앞 공터에서 아파트 골조가 올라가는",
+    "duration_seconds": 6,
+    "visual_type": "b-roll",
+    "description": "아파트 건설 현장 타임랩스 — 6개월 만에 골조 완성되는 과정",
+    "image_prompt": "Construction site time-lapse of Korean apartment building rising from foundation to frame in 6 months, urban Seoul background",
+    "notes": "타임랩스 소스 필요 — 촬영 또는 스톡 영상"
+  },
+  {
+    "scene_id": 14,
+    "section": "본론4",
+    "script_excerpt": "⚠️ 솔직하게 말할게요",
+    "duration_seconds": 3,
+    "visual_type": "화면전환",
+    "description": "분위기 전환: 화면이 잠깐 어두워졌다 밝아지며 '솔직하게 말할게요' 자막 등장",
+    "image_prompt": "",
+    "notes": "BGM 톤 살짝 낮추기 — 진지한 분위기로 전환"
+  },
+  {
+    "scene_id": 15,
+    "section": "본론4",
+    "script_excerpt": "주변 사람들이 15분 만에 뚝딱 먹고 나가요",
+    "duration_seconds": 5,
+    "visual_type": "b-roll",
+    "description": "직장인 식당에서 빠르게 식사하고 자리를 뜨는 사람들, 외국인이 혼자 천천히 먹으며 두리번거림",
+    "image_prompt": "Korean office workers eating fast at lunch restaurant, a foreigner eating slowly looking around, candid style",
+    "notes": "코믹하지 않게 — 공감 위주 연출"
+  },
+  {
+    "scene_id": 16,
+    "section": "본론4",
+    "script_excerpt": "⚡ 빠름 = 효율·성장 vs 💭 빠름 = 때로는 압박",
+    "duration_seconds": 5,
+    "visual_type": "애니메이션",
+    "description": "화면 반 분할: 왼쪽 '효율·성장' (올라가는 화살표, 건물, 배달) vs 오른쪽 '압박' (시계, 달리는 사람)",
+    "image_prompt": "Split screen infographic: left side showing efficiency and growth icons (arrow up, building, delivery), right side showing stress icons (clock, running figure)",
+    "notes": "균형 잡힌 시각화 — 어느 쪽도 과도하게 강조하지 않음"
+  },
+  {
+    "scene_id": 17,
+    "section": "아웃트로",
+    "script_excerpt": "서울 밤 야경, 분주하게 움직이는 사람들 타임랩스",
+    "duration_seconds": 8,
+    "visual_type": "b-roll",
+    "description": "서울 도심 야경 타임랩스 — 광화문, 강남, 한강 야경 순서로 편집",
+    "image_prompt": "Seoul cityscape night time-lapse, Gwanghwamun and Gangnam skyline, light trails from traffic, beautiful and energetic atmosphere",
+    "notes": "감동적인 BGM 상승 구간과 맞춰서 편집"
+  },
+  {
+    "scene_id": 18,
+    "section": "아웃트로",
+    "script_excerpt": "👍 구독 & 좋아요 부탁드려요!",
+    "duration_seconds": 5,
+    "visual_type": "자막",
+    "description": "구독 버튼 애니메이션 + 종 아이콘 흔들림 효과, 다음 영상 추천 카드 표시",
+    "image_prompt": "",
+    "notes": "엔드 스크린 구성: 구독 버튼 + 이전 에피소드 추천 카드 2개"
+  }
+]
