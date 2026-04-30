@@ -7,8 +7,8 @@ channel:
   target_word_count: 1300   # 한국어 기준 8분 분량
 
 llm:
-  provider: "openai"          # openai | anthropic | ollama
-  model: "gpt-4o"
+  provider: "anthropic"         # anthropic | openai | ollama
+  model: "claude-opus-4-5"
   temperature: 0.7
   max_tokens: 4096
 
@@ -20,11 +20,19 @@ research:
   youtube_search_queries:
     - "foreigner life in Korea vlog"
     - "living in Korea as a foreigner"
-    - "외국인 한국 생활 브이로그"
     - "culture shock Korea foreigner"
     - "expat Korea daily life"
+    - "American living in Korea"
+    - "European living in Korea"
+  excluded_languages:
+    - "ko"          # 한국어 영상 제외
+  preferred_transcript_languages:
+    - "en"          # 영어 우선
+    - "en-US"
+    - "en-GB"
+    - "auto"        # 자동 생성 자막 허용
   max_results_per_query: 10   # 쿼리당 최대 검색 결과 수
-  top_videos_to_rank: 20      # 최종 랭킹에 포함할 동영상 수
+  top_videos_to_rank: 15      # 최종 랭킹에 포함할 동영상 수
   ranking_weights:
     views: 0.4
     likes: 0.3

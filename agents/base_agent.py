@@ -44,17 +44,16 @@ class BaseAgent(ABC):
     def call_llm(self, system_prompt: str, user_prompt: str) -> str:
         if self.mock:
             return self._mock_response(system_prompt, user_prompt)
-        console.print(f"  [dim]→ LLM 호출 중... ({self.llm_cfg['model']})[/dim]")
-        response = self.client.chat.completions.create(
+        console.print(f"  [dim]→ Claude 호출 중... ({self.llm_cfg['model']})[/dim]")
+        import anthropic
+        client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+        message = client.messages.create(
             model=self.llm_cfg["model"],
-            temperature=self.llm_cfg["temperature"],
             max_tokens=self.llm_cfg["max_tokens"],
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt},
-            ],
+            system=system_prompt,
+            messages=[{"role": "user", "content": user_prompt}],
         )
-        return response.choices[0].message.content.strip()
+        return message.content[0].text.strip()
 
     def _mock_response(self, system_prompt: str, user_prompt: str) -> str:
         """Mock 모드: 에이전트 타입을 추론하여 샘플 응답 반환"""
@@ -86,39 +85,49 @@ class BaseAgent(ABC):
             "search_queries": [
                 "foreigner life in Korea vlog",
                 "living in Korea as a foreigner",
-                "외국인 한국 생활 브이로그"
+                "culture shock Korea foreigner",
+                "American living in Korea",
+                "European living in Korea"
             ],
-            "total_found": 20,
+            "excluded_languages": ["ko"],
+            "total_found": 15,
+            "transcript_stats": {"success": 7, "no_transcript": 3, "skipped": 5},
             "videos": [
-                {"rank": 1, "video_id": "abc001", "title": "외국인이 처음 한국 지하철 탔을 때 충격받은 이유", "channel": "Dave from Korea", "published_at": "2024-11-15T10:00:00Z", "description": "미국에서 온 Dave가 서울 지하철을 처음 타며 겪은 문화 충격을 솔직하게 이야기합니다.", "url": "https://www.youtube.com/watch?v=abc001", "views": 3200000, "likes": 145000, "comments": 8900, "search_query": "foreigner life in Korea vlog", "main_topics": ["대중교통", "문화충격"], "ranking_score": 0.95, "ranking_reason": "높은 조회수와 최신성"},
-                {"rank": 2, "video_id": "abc002", "title": "한국에서 혼자 사는 외국인의 하루 루틴", "channel": "Sarah in Seoul", "published_at": "2024-12-01T09:00:00Z", "description": "영국 출신 Sarah의 서울 1인 생활 브이로그. 편의점 생활부터 한강 피크닉까지.", "url": "https://www.youtube.com/watch?v=abc002", "views": 2800000, "likes": 132000, "comments": 7200, "search_query": "living in Korea as a foreigner", "main_topics": ["일상", "1인생활"], "ranking_score": 0.91, "ranking_reason": "최신 업로드, 높은 참여도"},
-                {"rank": 3, "video_id": "abc003", "title": "한국 직장 문화에 적응하는 외국인의 현실", "channel": "Felipe Korea Life", "published_at": "2024-10-20T08:00:00Z", "description": "브라질 출신 Felipe의 한국 회사 생활. 야근 문화, 회식 문화를 솔직하게 공유.", "url": "https://www.youtube.com/watch?v=abc003", "views": 2400000, "likes": 98000, "comments": 6100, "search_query": "foreigner life in Korea vlog", "main_topics": ["직장문화", "회식"], "ranking_score": 0.87, "ranking_reason": "직장문화 주제 높은 관심"},
-                {"rank": 4, "video_id": "abc004", "title": "외국인 눈에 비친 한국 편의점의 놀라운 점 10가지", "channel": "Emma Seoul Diary", "published_at": "2025-01-10T11:00:00Z", "description": "호주 출신 Emma가 한국 편의점에서 발견한 신기하고 놀라운 것들을 소개합니다.", "url": "https://www.youtube.com/watch?v=abc004", "views": 1900000, "likes": 87000, "comments": 5400, "search_query": "culture shock Korea foreigner", "main_topics": ["편의점", "문화충격"], "ranking_score": 0.83, "ranking_reason": "편의점 콘텐츠 인기"},
-                {"rank": 5, "video_id": "abc005", "title": "한국에서 아파서 병원 갔더니 깜짝 놀란 이유", "channel": "Tom's Korea", "published_at": "2024-09-05T14:00:00Z", "description": "캐나다 출신 Tom이 한국 병원에서 경험한 빠른 서비스와 저렴한 의료비에 놀란 이야기.", "url": "https://www.youtube.com/watch?v=abc005", "views": 1750000, "likes": 79000, "comments": 4800, "search_query": "expat Korea daily life", "main_topics": ["의료", "의료보험"], "ranking_score": 0.79, "ranking_reason": "의료 주제 관심도 높음"},
-                {"rank": 6, "video_id": "abc006", "title": "외국인이 한국에서 집 구하는 과정 (전세가 뭐야?)", "channel": "Lena Korea Vlog", "published_at": "2024-08-22T10:00:00Z", "description": "독일 출신 Lena가 처음 접한 한국 전세 제도에 대해 설명하고 집 구하기 과정을 공유.", "url": "https://www.youtube.com/watch?v=abc006", "views": 1600000, "likes": 71000, "comments": 4200, "search_query": "living in Korea as a foreigner", "main_topics": ["주거", "전세"], "ranking_score": 0.76, "ranking_reason": "주거 문화 정보성 높음"},
-                {"rank": 7, "video_id": "abc007", "title": "한국인 친구 사귀기가 어려운 이유 솔직 고백", "channel": "Mike from LA", "published_at": "2025-02-14T09:00:00Z", "description": "미국 LA 출신 Mike의 한국 친구 사귀기 도전기. 언어 장벽과 문화 차이를 극복한 방법.", "url": "https://www.youtube.com/watch?v=abc007", "views": 1500000, "likes": 68000, "comments": 9800, "search_query": "foreigner life in Korea vlog", "main_topics": ["인간관계", "친구"], "ranking_score": 0.74, "ranking_reason": "댓글 참여도 매우 높음"},
-                {"rank": 8, "video_id": "abc008", "title": "한국 배달 앱 처음 써봤는데 인생이 바뀌었다", "channel": "Julia Seoul Life", "published_at": "2025-01-28T12:00:00Z", "description": "프랑스 출신 Julia가 쿠팡이츠와 배민을 처음 사용하고 충격받은 배달 문화 이야기.", "url": "https://www.youtube.com/watch?v=abc008", "views": 1350000, "likes": 62000, "comments": 3800, "search_query": "culture shock Korea foreigner", "main_topics": ["배달문화", "앱"], "ranking_score": 0.71, "ranking_reason": "배달 문화 트렌드"},
-                {"rank": 9, "video_id": "abc009", "title": "외국인이 한국 찜질방 처음 갔을 때 반응", "channel": "Alex Korea Adventure", "published_at": "2024-07-18T15:00:00Z", "description": "뉴질랜드 출신 Alex의 찜질방 첫 경험. 한국의 목욕 문화를 처음 접하며 느낀 점을 공유.", "url": "https://www.youtube.com/watch?v=abc009", "views": 1200000, "likes": 55000, "comments": 3400, "search_query": "외국인 한국 생활 브이로그", "main_topics": ["찜질방", "목욕문화"], "ranking_score": 0.68, "ranking_reason": "한국 특유 문화 콘텐츠"},
-                {"rank": 10, "video_id": "abc010", "title": "한국 카페 문화에 빠진 외국인의 솔직 리뷰", "channel": "Sophie in Korea", "published_at": "2025-03-05T10:00:00Z", "description": "벨기에 출신 Sophie가 한국 카페 문화, 스터디 카페, 테마 카페를 소개합니다.", "url": "https://www.youtube.com/watch?v=abc010", "views": 980000, "likes": 44000, "comments": 2900, "search_query": "expat Korea daily life", "main_topics": ["카페", "커피문화"], "ranking_score": 0.64, "ranking_reason": "카페 문화 인기 지속"},
+                {"rank": 1, "video_id": "abc001", "title": "Things That SHOCKED Me About Living in Korea", "channel": "Dave from USA", "language": "en", "published_at": "2024-11-15T10:00:00Z", "description": "American Dave shares the most shocking things about Korean daily life including delivery, internet speed, and work culture.", "url": "https://www.youtube.com/watch?v=abc001", "views": 3200000, "likes": 145000, "comments": 8900, "search_query": "culture shock Korea foreigner", "main_topics": ["culture shock", "daily life"], "ranking_score": 0.95, "ranking_reason": "Highest views, recent upload", "has_transcript": True, "transcript_language": "en"},
+                {"rank": 2, "video_id": "abc002", "title": "Living Alone in Seoul as a Foreigner — My Daily Routine", "channel": "Sarah in Seoul", "language": "en", "published_at": "2024-12-01T09:00:00Z", "description": "British Sarah shows her daily routine living alone in Seoul — convenience stores, Han River picnics, and more.", "url": "https://www.youtube.com/watch?v=abc002", "views": 2800000, "likes": 132000, "comments": 7200, "search_query": "living in Korea as a foreigner", "main_topics": ["solo living", "daily routine"], "ranking_score": 0.91, "ranking_reason": "Recent upload, high engagement", "has_transcript": True, "transcript_language": "en"},
+                {"rank": 3, "video_id": "abc003", "title": "Korean Work Culture SHOCKED Me (Brazilian Perspective)", "channel": "Felipe Korea Life", "language": "en", "published_at": "2024-10-20T08:00:00Z", "description": "Brazilian Felipe talks about Korean work culture — overtime, hoesik (work dinners), and the pressure to work fast.", "url": "https://www.youtube.com/watch?v=abc003", "views": 2400000, "likes": 98000, "comments": 6100, "search_query": "expat Korea daily life", "main_topics": ["work culture", "hoesik"], "ranking_score": 0.87, "ranking_reason": "Work culture topic high interest", "has_transcript": True, "transcript_language": "en"},
+                {"rank": 4, "video_id": "abc004", "title": "10 Things That AMAZED Me About Korean Convenience Stores", "channel": "Emma Seoul Diary", "language": "en", "published_at": "2025-01-10T11:00:00Z", "description": "Australian Emma discovers 10 amazing things about Korean convenience stores that don't exist back home.", "url": "https://www.youtube.com/watch?v=abc004", "views": 1900000, "likes": 87000, "comments": 5400, "search_query": "foreigner life in Korea vlog", "main_topics": ["convenience store", "culture shock"], "ranking_score": 0.83, "ranking_reason": "Convenience store content popular", "has_transcript": True, "transcript_language": "en"},
+                {"rank": 5, "video_id": "abc005", "title": "I Went to a Korean Hospital — Here's What Happened", "channel": "Tom's Korea", "language": "en", "published_at": "2024-09-05T14:00:00Z", "description": "Canadian Tom visits a Korean hospital for the first time and is blown away by the low cost and fast service.", "url": "https://www.youtube.com/watch?v=abc005", "views": 1750000, "likes": 79000, "comments": 4800, "search_query": "American living in Korea", "main_topics": ["healthcare", "cost of living"], "ranking_score": 0.79, "ranking_reason": "Healthcare topic generates strong reactions", "has_transcript": True, "transcript_language": "en"},
+                {"rank": 6, "video_id": "abc006", "title": "Finding an Apartment in Korea as a Foreigner (Jeonse explained)", "channel": "Lena Korea Vlog", "language": "en", "published_at": "2024-08-22T10:00:00Z", "description": "German Lena explains the confusing jeonse housing system and how she finally found her apartment in Seoul.", "url": "https://www.youtube.com/watch?v=abc006", "views": 1600000, "likes": 71000, "comments": 4200, "search_query": "European living in Korea", "main_topics": ["housing", "jeonse"], "ranking_score": 0.76, "ranking_reason": "Housing info high value", "has_transcript": True, "transcript_language": "en"},
+                {"rank": 7, "video_id": "abc007", "title": "Why It's HARD to Make Korean Friends (Honest Truth)", "channel": "Mike from LA", "language": "en", "published_at": "2025-02-14T09:00:00Z", "description": "LA's Mike shares his honest experience trying to make Korean friends and the cultural barriers involved.", "url": "https://www.youtube.com/watch?v=abc007", "views": 1500000, "likes": 68000, "comments": 9800, "search_query": "foreigner life in Korea vlog", "main_topics": ["friendship", "social culture"], "ranking_score": 0.74, "ranking_reason": "Very high comment count — emotional topic", "has_transcript": True, "transcript_language": "en"},
+                {"rank": 8, "video_id": "abc008", "title": "Korean Food Delivery Changed My Life (30min delivery??)", "channel": "Julia Seoul Life", "language": "en", "published_at": "2025-01-28T12:00:00Z", "description": "French Julia tries Korean food delivery apps for the first time and can't believe the 30-minute delivery time.", "url": "https://www.youtube.com/watch?v=abc008", "views": 1350000, "likes": 62000, "comments": 3800, "search_query": "culture shock Korea foreigner", "main_topics": ["food delivery", "convenience"], "ranking_score": 0.71, "ranking_reason": "Food delivery trend", "has_transcript": False, "transcript_language": None},
+                {"rank": 9, "video_id": "abc009", "title": "My First Time at a Korean Jimjilbang (Sauna) 🇰🇷", "channel": "Alex Korea Adventure", "language": "en", "published_at": "2024-07-18T15:00:00Z", "description": "New Zealander Alex experiences a Korean jimjilbang (sauna) for the first time — awkward but amazing!", "url": "https://www.youtube.com/watch?v=abc009", "views": 1200000, "likes": 55000, "comments": 3400, "search_query": "foreigner life in Korea vlog", "main_topics": ["jimjilbang", "bathing culture"], "ranking_score": 0.68, "ranking_reason": "Unique Korean culture content", "has_transcript": False, "transcript_language": None},
+                {"rank": 10, "video_id": "abc010", "title": "Korea's Cafe Culture — An Honest Review from a European", "channel": "Sophie in Korea", "language": "en", "published_at": "2025-03-05T10:00:00Z", "description": "Belgian Sophie reviews Korean cafe culture, study cafes, and theme cafes from a European perspective.", "url": "https://www.youtube.com/watch?v=abc010", "views": 980000, "likes": 44000, "comments": 2900, "search_query": "European living in Korea", "main_topics": ["cafe culture", "study culture"], "ranking_score": 0.64, "ranking_reason": "Cafe culture sustained interest", "has_transcript": False, "transcript_language": None}
             ],
-            "trend_analysis": "외국인의 한국 생활 콘텐츠에서 가장 인기 있는 주제는 대중교통, 직장문화, 의료시스템 등 실용적인 정보와 편의점·배달 앱·찜질방 등 한국 특유의 생활 문화입니다. 특히 '처음 경험했을 때 충격받은' 포맷과 '외국 vs 한국 비교' 포맷이 높은 조회수를 기록하고 있습니다. 최근에는 한국인 친구 사귀기, 주거 문화(전세) 등 생활 정착 관련 콘텐츠의 관심도가 높아지고 있습니다."
+            "trend_analysis": "Foreign-language content about Korea focuses heavily on: (1) Practical shock moments — delivery speed, internet speed, hospital costs creating strong emotional reactions. (2) Social/human connection topics — making Korean friends, workplace culture, loneliness — generating the highest comment counts. (3) Unique Korean institutions — jimjilbang, PC rooms, convenience stores — unique enough to drive curiosity clicks. Videos with personal, honest narratives ('I tried...', 'shocked me', 'honest truth') dramatically outperform informational content."
         }
         return json.dumps(data, ensure_ascii=False)
 
     @staticmethod
     def _mock_topic_response() -> str:
         data = {
-            "title": "외국인이 한국 병원에서 놀란 진짜 이유",
-            "subtitle": "비용, 속도, 서비스... 외국인이 경험한 한국 의료 시스템의 모든 것",
-            "keywords": ["한국 의료", "건강보험", "외국인 병원", "한국 병원 비용", "문화충격"],
-            "target_audience": "한국에 거주하거나 관심 있는 외국인, 한국 의료 시스템이 궁금한 한국인",
-            "angle": "외국(특히 미국/유럽)의 의료 비용·대기시간과 한국의 차이를 외국인 시각으로 비교. 의료보험 가입 과정의 복잡함과 혜택을 동시에 조명.",
-            "hook": "'감기약 하나 사는 데 왜 300달러야?' — 미국에서 온 제가 한국 병원 영수증 받고 한참 눈을 의심했습니다.",
-            "reference_videos": [
-                "한국에서 아파서 병원 갔더니 깜짝 놀란 이유 (Tom's Korea)",
-                "외국인이 처음 한국 지하철 탔을 때 충격받은 이유 (Dave from Korea)"
+            "title": "한국에서 친구 사귀기 — 외국인이 말하는 솔직한 현실",
+            "subtitle": "언어 장벽부터 눈치 문화까지, 외국인이 한국인 친구를 사귀기까지의 진짜 이야기",
+            "keywords": ["한국 친구", "외국인 인간관계", "한국 사회문화", "눈치 문화", "언어 장벽"],
+            "target_audience": "한국 거주 외국인, 한국 유학/이민 고려자, 외국인과의 교류에 관심 있는 한국인",
+            "angle": "단순한 '어렵다'는 결론이 아니라, 외국인들이 실제 transcript에서 언급한 구체적 에피소드(카카오톡 문화, 처음엔 차갑지만 친해지면 극도로 따뜻한 한국인 특성)를 중심으로 공감 + 희망적 메시지 전달",
+            "hook": "'한국인들은 처음엔 차가워요. 근데 한 번 친해지면... 평생 친구가 돼요.' — 이 말을 들었을 때 제가 왜 울었는지 얘기해 드릴게요.",
+            "transcript_insights": [
+                "7개 영상 중 5개에서 '처음엔 접근이 어렵지만 한번 친해지면 매우 따뜻하다'는 공통 언급",
+                "댓글 수 1위(9,800개) 영상이 바로 친구 사귀기 주제 — 외국인과 한국인 모두 강하게 공감",
+                "convenience store·delivery 주제는 이미 다수 영상에서 다뤄짐 → 틈새 주제로 '인간관계' 선택",
+                "transcript에서 반복 등장 키워드: 'shy at first', 'warm inside', 'group culture', 'hierarchy'"
             ],
-            "selection_reason": "조회수 상위 동영상에서 의료 주제가 높은 관심을 보이며, 아직 깊이 있게 다뤄지지 않은 건강보험 가입 과정과 비용 비교 각도가 차별화 포인트로 적합."
+            "reference_videos": [
+                "Why It's HARD to Make Korean Friends (Mike from LA, 1,500,000회, 댓글 9,800개)",
+                "Living Alone in Seoul as a Foreigner (Sarah in Seoul, 2,800,000회)"
+            ],
+            "selection_reason": "Transcript 분석 결과 '친구 사귀기' 주제가 댓글 참여도 압도적 1위이며, 7개 transcript에서 공통적으로 등장하는 핵심 감정 키워드. 기존 ep002~004와 중복 없음."
         }
         return json.dumps(data, ensure_ascii=False)
 
