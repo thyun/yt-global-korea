@@ -1,0 +1,122 @@
+[
+  {
+    "scene_id": 1,
+    "section": "인트로",
+    "script_excerpt": "다른 나라에서 아파본 적 있으세요?",
+    "duration_seconds": 5,
+    "visual_type": "b-roll",
+    "description": "진행자가 카메라 바라보며 병원 건물 앞에 서 있는 모습",
+    "image_prompt": "A foreigner standing in front of a Korean clinic building in Seoul, sunny day, realistic photo style",
+    "notes": "오프닝 훅, 밝고 친근한 톤"
+  },
+  {
+    "scene_id": 2,
+    "section": "인트로",
+    "script_excerpt": "청구서 보고 기절할 뻔했거든요",
+    "duration_seconds": 4,
+    "visual_type": "인서트이미지",
+    "description": "미국 병원 청구서 이미지 (고액 금액 강조)",
+    "image_prompt": "American hospital bill with high cost highlighted, close-up, realistic",
+    "notes": "미국 vs 한국 비교 효과"
+  },
+  {
+    "scene_id": 3,
+    "section": "본론1",
+    "script_excerpt": "서울 시내 병원 외관, 환자 대기실",
+    "duration_seconds": 6,
+    "visual_type": "b-roll",
+    "description": "깔끔한 한국 동네 내과 외관, 간판, 입구",
+    "image_prompt": "Clean Korean neighborhood clinic exterior, medical sign in Korean, daytime, realistic",
+    "notes": "친근한 동네 병원 분위기"
+  },
+  {
+    "scene_id": 4,
+    "section": "본론1",
+    "script_excerpt": "진찰료 + 약값 = 약 8,000원~15,000원",
+    "duration_seconds": 5,
+    "visual_type": "자막",
+    "description": "화면 중앙 자막: 진찰료+약값 = 8,000원~15,000원 (큰 폰트, 노란색 강조)",
+    "image_prompt": "Korean medical receipt showing low cost around 8000-15000 KRW, close-up",
+    "notes": "임팩트 자막, 배경 흐리게"
+  },
+  {
+    "scene_id": 5,
+    "section": "본론1",
+    "script_excerpt": "약국에서 약 받는 외국인 모습",
+    "duration_seconds": 5,
+    "visual_type": "b-roll",
+    "description": "외국인이 약국 창구에서 약 받으며 미소 짓는 모습",
+    "image_prompt": "Foreigner receiving medicine at a Korean pharmacy, smiling, bright interior, realistic",
+    "notes": "안도감 표현"
+  },
+  {
+    "scene_id": 6,
+    "section": "본론2",
+    "script_excerpt": "병원 내부, 번호표 뽑는 모습",
+    "duration_seconds": 5,
+    "visual_type": "b-roll",
+    "description": "번호표 발행기에서 번호표 뽑는 손, 대기 화면",
+    "image_prompt": "Number ticket machine in Korean hospital waiting area, patient taking ticket, realistic",
+    "notes": "효율적인 시스템 강조"
+  },
+  {
+    "scene_id": 7,
+    "section": "본론2",
+    "script_excerpt": "한국 동네 의원 수 = 인구 대비 세계 최고 수준",
+    "duration_seconds": 4,
+    "visual_type": "애니메이션",
+    "description": "지도 위에 의원 아이콘이 촘촘히 표시되는 인포그래픽 애니메이션",
+    "image_prompt": "Infographic map of Seoul with many medical clinic icons clustered, clean design",
+    "notes": "인포그래픽 스타일, 2초 애니메이션"
+  },
+  {
+    "scene_id": 8,
+    "section": "본론3",
+    "script_excerpt": "외국인등록증, 건강보험증 이미지",
+    "duration_seconds": 5,
+    "visual_type": "인서트이미지",
+    "description": "외국인등록증과 건강보험증 나란히 놓인 이미지",
+    "image_prompt": "Korean foreigner registration card and health insurance card side by side, flat lay, realistic",
+    "notes": "중요 정보 강조"
+  },
+  {
+    "scene_id": 9,
+    "section": "본론3",
+    "script_excerpt": "건강보험 가입: 체류 6개월 이상 OR 직장가입자",
+    "duration_seconds": 5,
+    "visual_type": "자막",
+    "description": "화면 하단 자막 박스: 가입 조건 체크리스트",
+    "image_prompt": "",
+    "notes": "체크리스트 형식, 녹색 체크마크"
+  },
+  {
+    "scene_id": 10,
+    "section": "본론4",
+    "script_excerpt": "단점도 솔직하게!",
+    "duration_seconds": 3,
+    "visual_type": "자막",
+    "description": "화면 전환과 함께 '단점도 솔직하게!' 자막 팝업",
+    "image_prompt": "",
+    "notes": "화면 전환 효과 사용"
+  },
+  {
+    "scene_id": 11,
+    "section": "아웃트로",
+    "script_excerpt": "병원 앞에서 엄지 척 하는 외국인",
+    "duration_seconds": 6,
+    "visual_type": "b-roll",
+    "description": "진행자가 병원 앞에서 엄지 척 포즈, 밝은 표정",
+    "image_prompt": "Foreigner giving thumbs up in front of Korean hospital entrance, happy expression, daytime",
+    "notes": "긍정적 마무리"
+  },
+  {
+    "scene_id": 12,
+    "section": "아웃트로",
+    "script_excerpt": "구독 & 좋아요!",
+    "duration_seconds": 5,
+    "visual_type": "자막",
+    "description": "구독/좋아요 애니메이션 버튼 그래픽",
+    "image_prompt": "",
+    "notes": "유튜브 구독 버튼 애니메이션 삽입"
+  }
+]

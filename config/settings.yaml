@@ -1,0 +1,40 @@
+# YouTube 동영상 제작 에이전트 설정
+
+channel:
+  name: "외국인의 한국 생활"
+  language: "ko"
+  target_duration_minutes: 8
+  target_word_count: 1300   # 한국어 기준 8분 분량
+
+llm:
+  provider: "openai"          # openai | anthropic | ollama
+  model: "gpt-4o"
+  temperature: 0.7
+  max_tokens: 4096
+
+# API 키는 .env 파일에 저장
+# OPENAI_API_KEY=sk-...
+# YOUTUBE_API_KEY=AIza...  (없으면 LLM 기반 시뮬레이션으로 대체)
+
+research:
+  youtube_search_queries:
+    - "foreigner life in Korea vlog"
+    - "living in Korea as a foreigner"
+    - "외국인 한국 생활 브이로그"
+    - "culture shock Korea foreigner"
+    - "expat Korea daily life"
+  max_results_per_query: 10   # 쿼리당 최대 검색 결과 수
+  top_videos_to_rank: 20      # 최종 랭킹에 포함할 동영상 수
+  ranking_weights:
+    views: 0.4
+    likes: 0.3
+    recency: 0.2
+    relevance: 0.1
+
+paths:
+  episodes_dir: "episodes"
+  templates_dir: "templates"
+
+episode:
+  id_prefix: "ep"
+  id_padding: 3               # ep001, ep002, ...
