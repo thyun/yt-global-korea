@@ -1,0 +1,176 @@
+[
+  {
+    "scene_id": "S01",
+    "section": "인트로",
+    "timestamp_estimate": "00:00~00:55",
+    "narration_summary": "2300만, 2000만 시청자가 본 한국 생활 영상 소개. 충격→적응→애정 여정 예고",
+    "asset_type": "B-ROLL",
+    "asset_description": "인천공항 국제선 도착 게이트 — 캐리어를 끌며 눈이 휘둥그레진 서양인 여행객 클로즈업, 이어 서울 야경 타임랩스(N서울타워 기준)",
+    "visual_prompt": "Cinematic wide shot of Incheon Airport international arrivals gate, diverse foreigners looking amazed, golden hour lighting transitioning to Seoul night skyline timelapse, N Seoul Tower glowing",
+    "mood": "설레임, 기대감",
+    "camera_note": "도착 게이트 정면 → 서울 야경 드론 타임랩스로 전환 (크로스 디졸브)",
+    "stock_keywords": ["인천공항 외국인", "서울 야경 타임랩스", "Seoul night skyline timelapse"]
+  },
+  {
+    "scene_id": "S02",
+    "section": "섹션1 — 속도와 편리함",
+    "timestamp_estimate": "00:55~01:45",
+    "narration_summary": "배달 30분, 지하철 2분 간격, 24시간 편의점. 독일 유에나씨 인용",
+    "asset_type": "B-ROLL",
+    "asset_description": "야간 배달 오토바이가 골목을 질주하는 장면 / 지하철 스크린도어가 정확히 닫히는 클로즈업 / 새벽 2시 환한 편의점 입구와 노래방 간판",
+    "visual_prompt": "POV shot of delivery motorcycle speeding through Seoul alley at night, neon lights blurring, then close-up of subway screen door closing precisely, then 2AM convenience store entrance glowing warmly",
+    "mood": "역동적, 흥분감",
+    "camera_note": "핸드헬드 질주감 → 고정숏 정밀함 → 외부 풍경 스테디캠",
+    "stock_keywords": ["서울 배달 오토바이 야간", "지하철 스크린도어 닫힘", "편의점 새벽 외관"]
+  },
+  {
+    "scene_id": "S03",
+    "section": "섹션1 — 원본영상 삽입",
+    "timestamp_estimate": "01:45~02:30",
+    "narration_summary": "Germany vs South Korea 원본 클립 삽입",
+    "asset_type": "원본영상 삽입",
+    "asset_description": "YouTube 영상 'Germany vs South Korea' (채널: Uyen Ninh) — 02:15~03:00 구간 (독일 vs 한국 생활 속도 직접 비교 발언 핵심 부분)",
+    "visual_prompt": null,
+    "mood": "유머러스, 비교",
+    "camera_note": "영상 삽입 전후 나레이션 오버레이 자막 추가 권장",
+    "source_video": {
+      "title": "Germany vs South Korea",
+      "channel": "Uyen Ninh",
+      "url": "https://www.youtube.com/watch?v=검색결과ID",
+      "clip_start": "02:15",
+      "clip_end": "03:00"
+    }
+  },
+  {
+    "scene_id": "S04",
+    "section": "섹션1 — 야근 문화",
+    "timestamp_estimate": "02:30~03:05",
+    "narration_summary": "한국의 에너지 = 잠들지 않는 도시. 새벽 사무실, PC방",
+    "asset_type": "B-ROLL",
+    "asset_description": "새벽 사무실 창문에 켜진 불빛 원경 / 고시원 복도 작은 창들 / PC방에서 게임하는 청소년들",
+    "visual_prompt": "Aerial drone shot of Seoul office buildings with lights still on at 2AM, then corridor of goshiwon with small lit windows, then interior of PC bang with focused gamers",
+    "mood": "도시의 에너지, 약간의 고독감",
+    "camera_note": "드론 에어리얼 → 핸드헬드 복도 → 인물 미디엄숏",
+    "stock_keywords": ["서울 새벽 사무실 야경", "고시원 복도", "PC방 야간"]
+  },
+  {
+    "scene_id": "S05",
+    "section": "섹션2 — 음식 가격",
+    "timestamp_estimate": "03:05~04:00",
+    "narration_summary": "밥은 싸고 집은 비싸다. 백반 7천원, 강남 월세 현실",
+    "asset_type": "B-ROLL",
+    "asset_description": "활기찬 포장마차 야간 클로즈업 / 가격표가 보이는 백반식당 / 치킨 박스 쌓인 배달 장면 / 강남 아파트 단지 원경 + 부동산 매물 가격표",
+    "visual_prompt": "Close-up of Korean pojangmacha at night with steaming food, then clean Korean restaurant with price board showing 7000 won set meal, then stacked chicken boxes, then wide shot of Gangnam apartment towers at sunset with real estate price sign in foreground",
+    "mood": "따뜻한 서민 음식 → 현실적 대비",
+    "camera_note": "클로즈업 → 미디엄 → 와이드숏으로 점층적 확대",
+    "stock_keywords": ["포장마차 야간", "한국 백반 식당 가격", "강남 아파트 부동산"]
+  },
+  {
+    "scene_id": "S06",
+    "section": "섹션2 — 원본영상 삽입",
+    "timestamp_estimate": "04:00~04:40",
+    "narration_summary": "Americans in South Korea 원본 클립 삽입 — 편의점 가격 반응",
+    "asset_type": "원본영상 삽입",
+    "asset_description": "YouTube 영상 'Americans in South Korea 🇰🇷' (채널: Radical Living) — 04:30~05:10 구간 (편의점 가격표 보며 놀라는 미국인 반응)",
+    "visual_prompt": null,
+    "mood": "유머러스, 공감",
+    "camera_note": "클립 위에 가격 자막 그래픽 오버레이 추가 권장 (KRW ↔ USD 환율 비교)",
+    "source_video": {
+      "title": "Americans in South Korea 🇰🇷",
+      "channel": "Radical Living",
+      "url": "https://www.youtube.com/watch?v=검색결과ID",
+      "clip_start": "04:30",
+      "clip_end": "05:10"
+    }
+  },
+  {
+    "scene_id": "S07",
+    "section": "섹션2 — 편의점 반응",
+    "timestamp_estimate": "04:40~05:00",
+    "narration_summary": "편의점 음식 신기해하는 외국인들 / 미국 돌아가서 맥도날드 가격에 멍해지는 이야기",
+    "asset_type": "B-ROLL",
+    "asset_description": "편의점에서 음식 포장을 신기하게 살펴보는 외국인 클로즈업 / 삼각김밥 포장 뜯어 한입 먹고 표정 밝아지는 장면",
+    "visual_prompt": "Close-up of foreigner's hands holding Korean triangle kimbap, examining packaging with curiosity, then biting into it, eyes widening with pleasant surprise, warm convenience store lighting",
+    "mood": "호기심, 즐거운 발견",
+    "camera_note": "핸드 클로즈업 → 얼굴 리액션숏 (인물 허가 필요)",
+    "stock_keywords": ["편의점 삼각김밥 외국인", "한국 편의점 음식 반응"]
+  },
+  {
+    "scene_id": "S08",
+    "section": "섹션3 — 관계의 벽",
+    "timestamp_estimate": "05:00~05:50",
+    "narration_summary": "한국인 친구 사귀기 어렵다. 카페, 엘리베이터 냉정함",
+    "asset_type": "B-ROLL",
+    "asset_description": "홍대 거리 인파 속 혼자 걷는 외국인의 뒷모습 (롱숏) / 엘리베이터 안에서 각자 핸드폰만 보는 사람들 / 카페에서 혼자 앉아 창밖 보는 외국인",
+    "visual_prompt": "Lonely wide shot of foreigner walking alone through crowded Hongdae street at dusk, back to camera, then elevator interior shot of Korean people all looking at phones, then foreigner sitting alone in cafe looking out window contemplatively",
+    "mood": "외로움, 고독, 낯섦",
+    "camera_note": "롱숏 → 클로즈업 → 창문 반사 컷",
+    "stock_keywords": ["홍대 거리 외국인 혼자", "엘리베이터 핸드폰", "카페 창밖 외로움"]
+  },
+  {
+    "scene_id": "S09",
+    "section": "섹션3 — 관계의 반전",
+    "timestamp_estimate": "05:50~06:20",
+    "narration_summary": "벽을 넘으면 세상에서 가장 헌신적인 친구들. 삼겹살, 한강 컵라면",
+    "asset_type": "B-ROLL",
+    "asset_description": "삼겹살집에서 환하게 웃으며 술잔 부딪히는 한국인과 외국인 친구 그룹 / 한강 야경 앞 벤치에서 컵라면 먹으며 웃는 장면",
+    "visual_prompt": "Warm bokeh shot of Korean and foreign friends clinking soju glasses at samgyeopsal restaurant, smoke and laughter, golden glow, then night scene at Han River of friends eating cup noodles on bench with city lights reflected",
+    "mood": "따뜻함, 유대감, 행복",
+    "camera_note": "따뜻한 색감(3200K) 보정 권장, 사람 표정 중점",
+    "stock_keywords": ["삼겹살 외국인 친구", "한강 컵라면 야경", "한국인 외국인 우정"]
+  },
+  {
+    "scene_id": "S10",
+    "section": "섹션4 — 한국이 나를 바꿨다",
+    "timestamp_estimate": "06:20~06:55",
+    "narration_summary": "패션, 시간관념, 한국어 꿈꾸기. 외국인의 내면 변화",
+    "asset_type": "B-ROLL",
+    "asset_description": "편의점 앞 유리문 거울에서 옷매무새 다듬는 외국인 / 지하철 안내판을 한국어로 읽으며 고개 끄덕이는 외국인 / 한국어가 빼곡한 공책 클로즈업",
+    "visual_prompt": "Foreigner adjusting outfit reflected in convenience store glass door, then reading Korean subway sign confidently, then close-up of notebook filled with Korean handwriting notes, soft morning light",
+    "mood": "성장, 자신감, 변화",
+    "camera_note": "반사 활용 독창적 구도, 공책 매크로 렌즈 권장",
+    "stock_keywords": ["외국인 한국어 공부", "지하철 한국어 간판", "한국 생활 적응"]
+  },
+  {
+    "scene_id": "S11",
+    "section": "섹션4 — 원본영상 삽입",
+    "timestamp_estimate": "06:55~07:30",
+    "narration_summary": "How I've changed since moving to Korea 원본 클립",
+    "asset_type": "원본영상 삽입",
+    "asset_description": "YouTube 영상 '🇰🇷How I've changed since moving to Korea😭' (채널: Rachel Kwon) — 01:45~02:30 구간 (내면 변화 핵심 발언)",
+    "visual_prompt": null,
+    "mood": "감동, 공감, 성찰",
+    "camera_note": "영상 삽입 후 감정적 여백 2초 확보 권장",
+    "source_video": {
+      "title": "🇰🇷How I've changed since moving to Korea😭",
+      "channel": "Rachel Kwon",
+      "url": "https://www.youtube.com/watch?v=검색결과ID",
+      "clip_start": "01:45",
+      "clip_end": "02:30"
+    }
+  },
+  {
+    "scene_id": "S12",
+    "section": "섹션4 — 한강 노을",
+    "timestamp_estimate": "07:30~07:45",
+    "narration_summary": "문화 충격은 당신을 더 넓은 사람으로 만든다",
+    "asset_type": "B-ROLL",
+    "asset_description": "한강 벤치에 앉아 노을을 바라보는 외국인의 뒷모습 (실루엣) / 서울 야경을 스마트폰에 담는 손 클로즈업",
+    "visual_prompt": "Silhouette of foreigner sitting on Han River bench at golden hour sunset, Seoul skyline in background, contemplative mood, then close-up of hands holding smartphone capturing the night cityscape, bokeh lights",
+    "mood": "성찰, 평화, 아름다움",
+    "camera_note": "실루엣 노출 설정 주의, 골든아워 타이밍 필수",
+    "stock_keywords": ["한강 노을 실루엣", "서울 야경 스마트폰", "한강 저녁 외국인"]
+  },
+  {
+    "scene_id": "S13",
+    "section": "아웃트로",
+    "timestamp_estimate": "07:45~08:00",
+    "narration_summary": "구독, 좋아요 유도. 다음 에피소드 예고 (한국 직장 문화)",
+    "asset_type": "B-ROLL + 그래픽",
+    "asset_description": "채널 로고 애니메이션 / 구독 버튼 클릭 유도 원형 그래픽 / 다음 에피소드 썸네일 카드 (오른쪽 상단 워터마크 포함)",
+    "visual_prompt": "Clean minimal channel outro animation, subscribe button pulse animation, end screen cards showing next episode thumbnail with Korean workplace theme",
+    "mood": "밝고 친근함",
+    "camera_note": "After Effects 또는 CapCut 아웃트로 템플릿 활용 권장",
+    "stock_keywords": ["유튜브 아웃트로 템플릿", "채널 구독 버튼 애니메이션"]
+  }
+]
