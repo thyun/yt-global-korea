@@ -25,6 +25,20 @@ console = Console()
 # 한국어 채널/제목 판별용 패턴
 _KOREAN_RE = re.compile(r"[\uAC00-\uD7A3\u1100-\u11FF\u3130-\u318F]")
 
+# ISO 8601 duration 파싱 (예: PT5M30S → 330)
+_DURATION_RE = re.compile(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?")
+
+
+def _parse_duration_seconds(iso_duration: str) -> int:
+    """ISO 8601 duration 문자열을 초로 변환. 파싱 실패 시 0 반환."""
+    m = _DURATION_RE.match(iso_duration or "")
+    if not m:
+        return 0
+    hours = int(m.group(1) or 0)
+    minutes = int(m.group(2) or 0)
+    seconds = int(m.group(3) or 0)
+    return hours * 3600 + minutes * 60 + seconds
+
 
 def _is_korean_content(title: str, channel: str, language_code: str | None) -> bool:
     """제목·채널명·언어 코드를 기반으로 한국어 콘텐츠 여부 판별"""
@@ -347,7 +361,10 @@ class ResearchAgent(BaseAgent):
     """
     외국인 한국 생활 관련 YouTube 동영상을 검색하고 랭킹을 매깁니다.
 
-    출력: 01_research/videos.json
+    출력:
+      01_research/videos.json
+      01_research/transcripts/{video_id}_transcript.txt
+      01_research/transcripts/{video_id}_transcript.json
     """
 
     def run(self) -> dict:
@@ -360,6 +377,9 @@ class ResearchAgent(BaseAgent):
         else:
             console.print("  [yellow]YOUTUBE_API_KEY 미설정 → LLM 시뮬레이션 모드[/yellow]")
             result = self._simulate_with_llm()
+
+        # transcript 다운로드
+        result = self._download_transcripts(result)
 
         self.write_json("01_research/videos.json", result)
         self._print_ranking_table(result["videos"])
@@ -386,6 +406,7 @@ class ResearchAgent(BaseAgent):
                 part="snippet",
                 type="video",
                 maxResults=max_per_query,
+                videoDuration="medium",   # 4~20분 영상만 조회
                 relevanceLanguage="ko",
                 regionCode="KR",
             ).execute()
@@ -400,7 +421,7 @@ class ResearchAgent(BaseAgent):
             if not video_ids:
                 continue
 
-            # 통계 정보 가져오기
+            # 통계 + 영상 길이 정보 가져오기
             stats_resp = youtube.videos().list(
                 part="statistics,snippet,contentDetails",
                 id=",".join(video_ids),
@@ -409,6 +430,11 @@ class ResearchAgent(BaseAgent):
             for item in stats_resp.get("items", []):
                 stats = item.get("statistics", {})
                 snippet = item.get("snippet", {})
+                content = item.get("contentDetails", {})
+
+                duration_iso = content.get("duration", "")
+                duration_secs = _parse_duration_seconds(duration_iso)
+
                 raw_videos.append({
                     "video_id": item["id"],
                     "title": snippet.get("title", ""),
@@ -420,6 +446,10 @@ class ResearchAgent(BaseAgent):
                     "likes": int(stats.get("likeCount", 0)),
                     "comments": int(stats.get("commentCount", 0)),
                     "search_query": query,
+                    "duration_seconds": duration_secs,
+                    "duration_iso": duration_iso,
+                    "has_transcript": False,
+                    "transcript_language": None,
                 })
 
         ranked = self._rank_videos(raw_videos, top_n)
@@ -427,6 +457,7 @@ class ResearchAgent(BaseAgent):
         return {
             "searched_at": datetime.now(timezone.utc).isoformat(),
             "search_queries": queries,
+            "video_duration_filter": "medium",
             "total_found": len(raw_videos),
             "videos": ranked,
             "trend_analysis": trend_analysis,
@@ -522,23 +553,130 @@ class ResearchAgent(BaseAgent):
         return self.call_llm(system_prompt, user_prompt)
 
     # ------------------------------------------------------------------ #
+    # Transcript 다운로드                                                   #
+    # ------------------------------------------------------------------ #
+    def _download_transcripts(self, result: dict) -> dict:
+        from youtube_transcript_api import YouTubeTranscriptApi, NoTranscriptFound, TranscriptsDisabled
+
+        preferred_langs = self.settings["research"].get(
+            "preferred_transcript_languages", ["en", "en-US", "en-GB"]
+        )
+        transcript_dir = self.episode_dir / "01_research" / "transcripts"
+        transcript_dir.mkdir(parents=True, exist_ok=True)
+
+        console.print(f"\n  [bold]Transcript 다운로드 시작...[/bold]")
+        success, skip, fail = 0, 0, 0
+
+        for video in result.get("videos", []):
+            vid_id = video.get("video_id", "")
+            if not vid_id or vid_id.startswith("가상") or len(vid_id) < 5:
+                video["has_transcript"] = False
+                video["transcript_language"] = None
+                skip += 1
+                continue
+
+            try:
+                transcript_list = YouTubeTranscriptApi.list_transcripts(vid_id)
+
+                transcript = None
+                used_lang = None
+                # 수동 자막 우선 (설정된 언어 순서대로)
+                for lang in preferred_langs:
+                    try:
+                        transcript = transcript_list.find_transcript([lang])
+                        used_lang = lang
+                        break
+                    except Exception:
+                        pass
+
+                # 없으면 자동 생성 영어 자막
+                if transcript is None:
+                    try:
+                        transcript = transcript_list.find_generated_transcript(["en"])
+                        used_lang = "en-auto"
+                    except Exception:
+                        pass
+
+                # 없으면 한국어 제외 첫 번째 자막
+                if transcript is None:
+                    for t in transcript_list:
+                        if not t.language_code.startswith("ko"):
+                            transcript = t
+                            used_lang = t.language_code
+                            break
+
+                if transcript is None:
+                    raise NoTranscriptFound(vid_id, [], {})
+
+                entries = transcript.fetch()
+                full_text = " ".join(e.get("text", "") for e in entries)
+
+                txt_path = transcript_dir / f"{vid_id}_transcript.txt"
+                txt_path.write_text(full_text, encoding="utf-8")
+
+                json_path = transcript_dir / f"{vid_id}_transcript.json"
+                json_path.write_text(
+                    json.dumps(
+                        {"video_id": vid_id, "language": used_lang, "entries": entries},
+                        ensure_ascii=False, indent=2,
+                    ),
+                    encoding="utf-8",
+                )
+
+                video["has_transcript"] = True
+                video["transcript_language"] = used_lang
+                console.print(
+                    f"  [green]✓[/green] [{video.get('rank', '?')}위] "
+                    f"{video.get('title', '')[:40]} ({used_lang})"
+                )
+                success += 1
+
+            except (NoTranscriptFound, TranscriptsDisabled):
+                video["has_transcript"] = False
+                video["transcript_language"] = None
+                console.print(
+                    f"  [yellow]—[/yellow] [{video.get('rank', '?')}위] "
+                    f"{video.get('title', '')[:40]} (자막 없음)"
+                )
+                fail += 1
+            except Exception as e:
+                video["has_transcript"] = False
+                video["transcript_language"] = None
+                console.print(
+                    f"  [red]✗[/red] [{video.get('rank', '?')}위] "
+                    f"{video.get('title', '')[:40]}: {e}"
+                )
+                fail += 1
+
+        console.print(
+            f"\n  [bold]Transcript 결과:[/bold] "
+            f"성공 {success}개 / 자막없음 {fail}개 / 건너뜀 {skip}개"
+        )
+        result["transcript_stats"] = {"success": success, "no_transcript": fail, "skipped": skip}
+        return result
+
+    # ------------------------------------------------------------------ #
     # 결과 출력                                                             #
     # ------------------------------------------------------------------ #
     def _print_ranking_table(self, videos: list[dict]) -> None:
         table = Table(title="📊 외국인 한국 생활 인기 동영상 랭킹", show_lines=True)
         table.add_column("순위", style="bold yellow", width=4)
-        table.add_column("제목", style="cyan", max_width=40)
-        table.add_column("채널", style="green", max_width=20)
+        table.add_column("제목", style="cyan", max_width=38)
+        table.add_column("채널", style="green", max_width=18)
+        table.add_column("길이", justify="right", width=7)
         table.add_column("조회수", justify="right", width=10)
-        table.add_column("점수", justify="right", width=6)
+        table.add_column("📄", width=3)
 
         for v in videos[:15]:
+            secs = v.get("duration_seconds", 0)
+            duration_str = f"{secs // 60}:{secs % 60:02d}" if secs else "—"
             table.add_row(
                 str(v.get("rank", "?")),
-                v.get("title", "")[:40],
-                v.get("channel", "")[:20],
+                v.get("title", "")[:38],
+                v.get("channel", "")[:18],
+                duration_str,
                 f"{v.get('views', 0):,}",
-                str(v.get("ranking_score", ""))[:5],
+                "✓" if v.get("has_transcript") else "—",
             )
         console.print(table)
 
@@ -549,4 +687,5 @@ class ResearchAgent(BaseAgent):
             lines = text.split("\n")
             text = "\n".join(lines[1:-1] if lines[-1].strip() == "```" else lines[1:])
         return json.loads(text)
+
 
