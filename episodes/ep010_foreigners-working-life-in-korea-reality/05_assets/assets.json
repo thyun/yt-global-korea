@@ -1,0 +1,171 @@
+[
+  {
+    "scene_id": "S01",
+    "section": "인트로",
+    "timestamp_estimate": "00:00~00:55",
+    "narration_summary": "외국인 친구가 한국 회사 취직했을 때 상상 → 직장인 외국인의 민낯 예고",
+    "asset_type": "B-ROLL",
+    "asset_description": "출근 시간 지하철 9호선 초만원 장면 (급행, 문 닫히는 클로즈업) → 사원증 목에 걸고 유리 오피스 빌딩 들어가는 외국인 뒷모습",
+    "visual_prompt": "Overcrowded Seoul subway Line 9 during rush hour, doors closing tightly, then exterior of modern glass office building, foreigner with ID badge around neck walking through revolving door, morning light",
+    "mood": "바쁨, 현실감, 도시 에너지",
+    "camera_note": "지하철 내부 핸드헬드 → 건물 외부 스테디캠 미디엄숏",
+    "stock_keywords": ["서울 지하철 9호선 출근 혼잡", "외국인 사원증 오피스빌딩"]
+  },
+  {
+    "scene_id": "S02",
+    "section": "섹션1 — 돈의 현실",
+    "timestamp_estimate": "00:55~01:55",
+    "narration_summary": "월 250만원 가계부: 월세 65·교통 7·식비 40·통신 5 = 나가는 돈 200, 남는 돈 50만원",
+    "asset_type": "B-ROLL",
+    "asset_description": "스마트폰 가계부 앱 화면 클로즈업 (항목별 숫자 보임) → 편의점에서 도시락 고르는 외국인 → 월세 계약서와 도장이 놓인 책상",
+    "visual_prompt": "Close-up of budgeting app on smartphone showing expense categories in Korean won, then foreigner carefully choosing a convenience store bento box comparing prices, then rental contract papers on desk with red stamp",
+    "mood": "현실적, 절약, 빡빡함",
+    "camera_note": "매크로 클로즈업 → 미디엄숏 → 오버헤드 테이블 숏",
+    "stock_keywords": ["가계부 앱 스마트폰", "편의점 도시락 가격 비교", "월세 계약서 책상"]
+  },
+  {
+    "scene_id": "S03",
+    "section": "섹션1 — 원본영상 삽입",
+    "timestamp_estimate": "01:55~02:40",
+    "narration_summary": "Living On $24K A Year In Seoul 클립 삽입",
+    "asset_type": "원본영상 삽입",
+    "asset_description": "YouTube 'Living On $24K A Year In Seoul, South Korea | Millennial Money' — 02:10~03:00 (월별 지출 항목 설명 핵심 구간)",
+    "visual_prompt": null,
+    "mood": "공감, 현실적",
+    "camera_note": "클립 위에 KRW 환산 자막 그래픽 오버레이 권장 ($24K ≈ 3,200만원)",
+    "source_video": {
+      "title": "Living On $24K A Year In Seoul, South Korea | Millennial Money",
+      "channel": "Millennial Money",
+      "clip_start": "02:10",
+      "clip_end": "03:00"
+    }
+  },
+  {
+    "scene_id": "S04",
+    "section": "섹션1 — 마무리 나레이션",
+    "timestamp_estimate": "02:40~03:05",
+    "narration_summary": "서울 물가는 한국인이든 외국인이든 동등하게 적용",
+    "asset_type": "B-ROLL",
+    "asset_description": "월급 명세서 클로즈업 (숫자 흐릿하게 처리) → 편의점 가격표 → 통장 잔액 화면 (블러 처리)",
+    "visual_prompt": "Blurred Korean payslip document close-up, then convenience store price tags in focus, then blurred bank account balance screen, all with cool office lighting",
+    "mood": "현실적, 공감",
+    "camera_note": "아웃포커스 기법으로 개인정보 자연 보호",
+    "stock_keywords": ["월급 명세서 흐림", "편의점 가격표 클로즈업", "통장 잔액 블러"]
+  },
+  {
+    "scene_id": "S05",
+    "section": "섹션2 — 직장 현실 (눈치)",
+    "timestamp_estimate": "03:05~04:00",
+    "narration_summary": "언어보다 '눈치'가 더 어렵다. 야근 문화, 회의 분위기",
+    "asset_type": "B-ROLL",
+    "asset_description": "야근 중 사무실 — 불 꺼진 공간에 혼자 남아 일하는 외국인 직장인 / 회의실에서 발언 타이밍 재며 주변 살피는 표정 미디엄숏 / 밤 편의점에서 혼자 컵라면 먹는 장면",
+    "visual_prompt": "Dark office with only one desk light on, foreigner working overtime alone, visible city lights through window, then medium shot of foreigner in glass-walled meeting room looking uncertain when to speak, then convenience store late night eating cup noodles alone",
+    "mood": "고독, 긴장감, 현실적",
+    "camera_note": "야간 조명 활용, 창문 배경으로 도시 느낌 강조",
+    "stock_keywords": ["사무실 야근 혼자", "회의실 눈치 외국인", "편의점 야간 컵라면"]
+  },
+  {
+    "scene_id": "S06",
+    "section": "섹션2 — 원본영상 삽입",
+    "timestamp_estimate": "04:00~04:45",
+    "narration_summary": "The Reality of Working in Korea 클립 삽입",
+    "asset_type": "원본영상 삽입",
+    "asset_description": "YouTube 'The Reality of Working in Korea as a Foreigner | Street Interview' — 03:45~04:30 (외국인이 한국 직장 문화 솔직 평가 핵심 발언)",
+    "visual_prompt": null,
+    "mood": "진솔함, 공감",
+    "camera_note": "클립 후 감정적 여백 1~2초 확보",
+    "source_video": {
+      "title": "The Reality of Working in Korea as a Foreigner | Street Interview",
+      "clip_start": "03:45",
+      "clip_end": "04:30"
+    }
+  },
+  {
+    "scene_id": "S07",
+    "section": "섹션2 — 팀워크 반전",
+    "timestamp_estimate": "04:45~05:05",
+    "narration_summary": "6개월 후 팀이 가족처럼 느껴짐. 삼겹살, 구내식당 동료",
+    "asset_type": "B-ROLL",
+    "asset_description": "삼겹살집에서 팀원들과 건배하는 외국인 / 점심시간 동료들과 구내식당으로 걸어가는 장면 (뒷모습, 웃음소리 환경음)",
+    "visual_prompt": "Warm samgyeopsal restaurant, foreigner clinking soju glass with Korean coworkers, smoke and laughter, golden bokeh, then wide shot of group walking together to cafeteria at lunchtime",
+    "mood": "따뜻함, 유대감",
+    "camera_note": "따뜻한 색온도(3200K) 보정",
+    "stock_keywords": ["삼겹살 외국인 직장 동료", "구내식당 점심 동료"]
+  },
+  {
+    "scene_id": "S08",
+    "section": "섹션3 — 소셜라이프 현실 (고독)",
+    "timestamp_estimate": "05:05~05:45",
+    "narration_summary": "28살 한국에서 혼자. 퇴근 후 고독, 가족 영상통화",
+    "asset_type": "B-ROLL",
+    "asset_description": "혼자 퇴근하는 외국인 뒷모습 (저녁 퇴근길) / 주말 오후 카페에서 노트북 혼자 하는 장면 / 폰 화면에 가족 영상통화 클로즈업",
+    "visual_prompt": "Lonely back view of foreigner walking alone after work in evening Seoul street, then solo foreigner at cafe with laptop on weekend afternoon, then close-up of phone screen showing video call with family",
+    "mood": "외로움, 고독, 그리움",
+    "camera_note": "따뜻한 카페 조명 vs 차가운 거리 조명 대비 활용",
+    "stock_keywords": ["외국인 혼자 퇴근", "카페 혼자 노트북 주말", "가족 영상통화 클로즈업"]
+  },
+  {
+    "scene_id": "S09",
+    "section": "섹션3 — 먼저 손 내밀기 반전",
+    "timestamp_estimate": "05:45~06:20",
+    "narration_summary": "먼저 말 걸면 친구가 된다. 한강 치킨, 함께 퇴근",
+    "asset_type": "B-ROLL",
+    "asset_description": "외국인이 먼저 웃으며 한국인 동료에게 말 거는 장면 / 한강변에서 치킨 먹으며 웃는 다국적 그룹 / 함께 어깨 나란히 퇴근하는 뒷모습",
+    "visual_prompt": "Foreigner smiling and initiating conversation with Korean colleague at office, then diverse group eating chicken at Han River at dusk, laughing, then warm shot of foreigner and Korean friends walking side by side after work",
+    "mood": "따뜻함, 희망, 반전",
+    "camera_note": "한강 노을 골든아워 타이밍 권장",
+    "stock_keywords": ["외국인 한국 동료 대화", "한강 치킨 다국적 친구", "퇴근 함께 걷기"]
+  },
+  {
+    "scene_id": "S10",
+    "section": "섹션4 — 그래도 여기 있는 이유",
+    "timestamp_estimate": "06:20~06:55",
+    "narration_summary": "한국이 나를 더 나은 사람으로 만든다: 부지런함, 정확함, 열정",
+    "asset_type": "B-ROLL",
+    "asset_description": "새벽 한강 달리기 외국인 / 한국어 교재·어휘 노트가 가득한 책상 클로즈업 / 사무실 창문에서 서울 야경 바라보는 뒷모습",
+    "visual_prompt": "Foreigner running along Han River at dawn with city lights still on, then close-up of Korean textbooks and handwritten vocabulary notes on desk, then silhouette of foreigner looking out office window at Seoul night skyline",
+    "mood": "성장, 자신감, 성찰",
+    "camera_note": "새벽 달리기 — 블루아워 조명, 야경 — 실루엣 노출 주의",
+    "stock_keywords": ["한강 새벽 달리기", "한국어 교재 노트 책상", "서울 야경 창문 실루엣"]
+  },
+  {
+    "scene_id": "S11",
+    "section": "섹션4 — 원본영상 삽입",
+    "timestamp_estimate": "06:55~07:35",
+    "narration_summary": "The Truth About My Life in Korea 클립 삽입",
+    "asset_type": "원본영상 삽입",
+    "asset_description": "YouTube 'The Truth About My Life in Korea (It's Not What You Think)' — 05:20~06:00 (한국이 자신을 성장시켰다는 핵심 고백 구간)",
+    "visual_prompt": null,
+    "mood": "감동, 성찰, 공감",
+    "camera_note": "클립 후 2초 침묵 유지 권장 (감정 흡수 시간)",
+    "source_video": {
+      "title": "The Truth About My Life in Korea (It's Not What You Think)",
+      "clip_start": "05:20",
+      "clip_end": "06:00"
+    }
+  },
+  {
+    "scene_id": "S12",
+    "section": "섹션4 — 마무리 나레이션",
+    "timestamp_estimate": "07:35~07:50",
+    "narration_summary": "벽을 넘으면 서울이 가장 살기 좋은 도시",
+    "asset_type": "B-ROLL",
+    "asset_description": "한강 노을 앞 여유롭게 벤치에 앉은 외국인 / 이어폰 끼고 지하철 창밖 도시 풍경 바라보는 장면",
+    "visual_prompt": "Foreigner sitting relaxed on Han River bench at golden hour sunset, satisfied expression, Seoul skyline background, then close-up of foreigner with earphones gazing out subway window at passing cityscape, reflective mood",
+    "mood": "만족, 평화, 여유",
+    "camera_note": "골든아워 필수 / 지하철 창문 반사 구도 활용",
+    "stock_keywords": ["한강 노을 벤치 외국인", "지하철 창밖 도시 풍경"]
+  },
+  {
+    "scene_id": "S13",
+    "section": "아웃트로",
+    "timestamp_estimate": "07:50~08:00",
+    "narration_summary": "구독·댓글 유도 + 다음 에피소드 예고",
+    "asset_type": "그래픽",
+    "asset_description": "채널 로고 아웃트로 애니메이션 / 구독 버튼 펄스 그래픽 / 다음 에피소드 썸네일 엔드카드",
+    "visual_prompt": "Clean minimal channel outro with logo animation, subscribe button pulse, end screen cards showing next episode preview",
+    "mood": "밝음, 친근함",
+    "camera_note": "After Effects / CapCut 아웃트로 템플릿 활용",
+    "stock_keywords": ["유튜브 아웃트로 템플릿"]
+  }
+]
