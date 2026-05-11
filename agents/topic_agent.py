@@ -67,9 +67,9 @@ class TopicAgent(BaseAgent):
                 "transcript_length": len(text),
             })
 
-        # 랭킹 순으로 정렬, 최대 8개만 분석 (토큰 절약)
+        # 랭킹 순으로 정렬, 최대 2개만 사용 (원본 영상 참조 제한)
         results.sort(key=lambda x: x["rank"])
-        return results[:8]
+        return results[:2]
 
     # ------------------------------------------------------------------ #
     # Transcript 기반 주제 선정                                              #
