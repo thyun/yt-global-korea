@@ -214,6 +214,7 @@ class ResearchAgent(BaseAgent):
 
         console.print(f"\n  [bold]Transcript 다운로드 시작...[/bold]")
         success, skip, fail = 0, 0, 0
+        ytt = YouTubeTranscriptApi()
 
         for video in result.get("videos", []):
             vid_id = video.get("video_id", "")
@@ -225,7 +226,7 @@ class ResearchAgent(BaseAgent):
 
             try:
                 # 영어 자막 우선, 없으면 자동 생성 자막
-                transcript_list = YouTubeTranscriptApi.list_transcripts(vid_id)
+                transcript_list = ytt.list(vid_id)
 
                 transcript = None
                 used_lang = None
@@ -259,15 +260,17 @@ class ResearchAgent(BaseAgent):
 
                 entries = transcript.fetch()
                 # 텍스트 파일로 저장
-                full_text = " ".join(e.get("text", "") for e in entries)
+                full_text = " ".join(e.text for e in entries)
                 txt_path = transcript_dir / f"{vid_id}_transcript.txt"
                 txt_path.write_text(full_text, encoding="utf-8")
 
                 # JSON (타임스탬프 포함)
                 json_path = transcript_dir / f"{vid_id}_transcript.json"
                 json_path.write_text(
-                    json.dumps({"video_id": vid_id, "language": used_lang, "entries": entries},
-                               ensure_ascii=False, indent=2),
+                    json.dumps(
+                        {"video_id": vid_id, "language": used_lang,
+                         "entries": [{"text": e.text, "start": e.start, "duration": e.duration} for e in entries]},
+                        ensure_ascii=False, indent=2),
                     encoding="utf-8"
                 )
 
@@ -566,6 +569,7 @@ class ResearchAgent(BaseAgent):
 
         console.print(f"\n  [bold]Transcript 다운로드 시작...[/bold]")
         success, skip, fail = 0, 0, 0
+        ytt = YouTubeTranscriptApi()
 
         for video in result.get("videos", []):
             vid_id = video.get("video_id", "")
@@ -576,11 +580,10 @@ class ResearchAgent(BaseAgent):
                 continue
 
             try:
-                transcript_list = YouTubeTranscriptApi.list_transcripts(vid_id)
+                transcript_list = ytt.list(vid_id)
 
                 transcript = None
                 used_lang = None
-                # 수동 자막 우선 (설정된 언어 순서대로)
                 for lang in preferred_langs:
                     try:
                         transcript = transcript_list.find_transcript([lang])
@@ -589,7 +592,6 @@ class ResearchAgent(BaseAgent):
                     except Exception:
                         pass
 
-                # 없으면 자동 생성 영어 자막
                 if transcript is None:
                     try:
                         transcript = transcript_list.find_generated_transcript(["en"])
@@ -597,7 +599,6 @@ class ResearchAgent(BaseAgent):
                     except Exception:
                         pass
 
-                # 없으면 한국어 제외 첫 번째 자막
                 if transcript is None:
                     for t in transcript_list:
                         if not t.language_code.startswith("ko"):
@@ -609,7 +610,7 @@ class ResearchAgent(BaseAgent):
                     raise NoTranscriptFound(vid_id, [], {})
 
                 entries = transcript.fetch()
-                full_text = " ".join(e.get("text", "") for e in entries)
+                full_text = " ".join(e.text for e in entries)
 
                 txt_path = transcript_dir / f"{vid_id}_transcript.txt"
                 txt_path.write_text(full_text, encoding="utf-8")
@@ -617,7 +618,8 @@ class ResearchAgent(BaseAgent):
                 json_path = transcript_dir / f"{vid_id}_transcript.json"
                 json_path.write_text(
                     json.dumps(
-                        {"video_id": vid_id, "language": used_lang, "entries": entries},
+                        {"video_id": vid_id, "language": used_lang,
+                         "entries": [{"text": e.text, "start": e.start, "duration": e.duration} for e in entries]},
                         ensure_ascii=False, indent=2,
                     ),
                     encoding="utf-8",
