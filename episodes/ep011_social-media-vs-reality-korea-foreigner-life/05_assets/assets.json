@@ -1,0 +1,145 @@
+{
+  "episode": "ep011",
+  "title": "한국 생활, SNS가 숨긴 불편한 진실",
+  "thumbnail": {
+    "concept": "왼쪽 절반: 화사한 TikTok 필터 스타일 벚꽃+치맥 이미지 / 오른쪽 절반: 흐린 날 좁은 원룸 창가 외국인 실루엣",
+    "text_overlay": "SNS vs 현실",
+    "font_style": "굵은 고딕, 왼쪽=핑크, 오른쪽=회색",
+    "cta_text": "한국 이민을 꿈꾸기 전에 봐야 할 영상"
+  },
+  "scenes": [
+    {
+      "scene_id": "S01",
+      "section": "오프닝 훅",
+      "type": "B-ROLL",
+      "description": "TikTok 피드 스크롤 화면 — #코리아라이프 #한국이민 해시태그 영상들 연속 재생",
+      "visual_prompt": "Smartphone screen recording of TikTok feed showing Korea lifestyle videos, cherry blossoms, Korean food, K-pop concerts, bright saturated colors, scroll animation",
+      "duration_sec": 8,
+      "notes": "화면 녹화 또는 스톡 소셜미디어 UI 사용 가능"
+    },
+    {
+      "scene_id": "S02",
+      "section": "오프닝 훅",
+      "type": "원본영상 삽입",
+      "source_video": "Is Living in Korea as a Foreigner… Overrated?🤔",
+      "video_id": "CAEjPbQhM40",
+      "timecode": "00:00~00:28",
+      "description": "외국인 크리에이터가 '한국이 과대평가됐다'고 카메라를 향해 말하는 오프닝 장면",
+      "notes": "자막 추가 필요 (한국어 번역)"
+    },
+    {
+      "scene_id": "S03",
+      "section": "1막: SNS 환상",
+      "type": "B-ROLL",
+      "description": "넷플릭스 K-드라마 썸네일 모자이크, BTS·블랙핑크 공연 클립",
+      "visual_prompt": "Netflix interface showing Korean drama thumbnails, K-pop concert stage with colorful lighting, crowds cheering, montage style",
+      "duration_sec": 10,
+      "notes": "스톡 영상 또는 유튜브 공식 클립 사용, 저작권 주의"
+    },
+    {
+      "scene_id": "S04",
+      "section": "1막: SNS 환상",
+      "type": "B-ROLL",
+      "description": "인천공항 외국인 입국 장면, 외국인등록증 발급 대기 줄",
+      "visual_prompt": "Incheon airport arrivals hall, foreign tourists with luggage, immigration queue, administrative office waiting room",
+      "duration_sec": 8,
+      "notes": "스톡 영상 사용 권장"
+    },
+    {
+      "scene_id": "S05",
+      "section": "2막: 언어 장벽",
+      "type": "B-ROLL",
+      "description": "한국어 교재 클로즈업, 지하철 한글 전광판",
+      "visual_prompt": "Korean language textbook open to a difficult grammar page, close-up of Korean characters, Seoul subway sign in Hangul, foreigner looking confused",
+      "duration_sec": 7,
+      "notes": "직접 촬영 추천 — 서울 지하철 2호선 안내판"
+    },
+    {
+      "scene_id": "S06",
+      "section": "2막: 언어 장벽",
+      "type": "원본영상 삽입",
+      "source_video": "Howdy Korea in UK: The Real Truth About Living in South Korea",
+      "video_id": "4jUqvoYcgGs",
+      "timecode": "01:15~01:55",
+      "description": "크리에이터가 언어 장벽과 일상 생활의 어려움을 솔직하게 말하는 장면",
+      "notes": "한국어 자막 필수"
+    },
+    {
+      "scene_id": "S07",
+      "section": "2막: 인간관계",
+      "type": "B-ROLL",
+      "description": "한강 돗자리 피크닉 — 외국인이 혼자 앉아 있는 장면 강조",
+      "visual_prompt": "Han River park, picnic blankets, groups of Korean friends laughing together, then cut to lone foreigner sitting separately, looking at phone, slightly lonely atmosphere",
+      "duration_sec": 10,
+      "notes": "직접 촬영 추천 — 한강공원 여의도/반포 구간"
+    },
+    {
+      "scene_id": "S08",
+      "section": "2막: 경제",
+      "type": "인포그래픽",
+      "description": "서울 원룸 평균 월세 vs 도쿄·뉴욕 비교 차트",
+      "visual_prompt": "Bar chart comparing average monthly rent for studio apartments: Seoul (강남 130만/마포 90만), Tokyo, New York. Clean minimal design, Korean labels",
+      "duration_sec": 6,
+      "notes": "모션그래픽 or 정적 인포그래픽 슬라이드"
+    },
+    {
+      "scene_id": "S09",
+      "section": "2막: 경제",
+      "type": "B-ROLL",
+      "description": "서울 부동산 앱 화면, 마트 영수증 클로즈업",
+      "visual_prompt": "Korean real estate app (Zigbang/Dabang) showing expensive listings, grocery receipt with expensive prices, credit card payment at cafe",
+      "duration_sec": 7,
+      "notes": "직접 촬영 또는 화면 녹화"
+    },
+    {
+      "scene_id": "S10",
+      "section": "3막: 그래도 사는 이유",
+      "type": "B-ROLL",
+      "description": "새벽 2시 골목 편의점, 혼자 걷는 여성 (안전한 분위기)",
+      "visual_prompt": "Late night Korean convenience store glowing in dark alley, woman walking alone safely, no fear, warm light from GS25 or CU store, peaceful atmosphere",
+      "duration_sec": 10,
+      "notes": "야간 직접 촬영 추천 — 홍대·이태원 골목"
+    },
+    {
+      "scene_id": "S11",
+      "section": "3막: 그래도 사는 이유",
+      "type": "B-ROLL",
+      "description": "지하철 막차 탑승, 배달 오토바이 줄지어 서 있는 장면",
+      "visual_prompt": "Seoul subway last train boarding, passengers rushing, then cut to rows of delivery motorcycles lined up outside apartment complex, night scene",
+      "duration_sec": 8,
+      "notes": "직접 촬영 또는 스톡"
+    },
+    {
+      "scene_id": "S12",
+      "section": "클로징",
+      "type": "B-ROLL",
+      "description": "원룸 창문 너머 서울 야경 — 서서히 암전",
+      "visual_prompt": "View from small studio apartment window at night, Seoul skyline with countless apartment lights, solitary but beautiful, slow zoom out, fade to black",
+      "duration_sec": 12,
+      "notes": "직접 촬영 강력 추천 — 감성 클로징의 핵심 장면"
+    },
+    {
+      "scene_id": "S13",
+      "section": "클로징",
+      "type": "원본영상 삽입",
+      "source_video": "Is Living in Korea as a Foreigner… Overrated?🤔",
+      "video_id": "CAEjPbQhM40",
+      "timecode": "05:20~05:55",
+      "description": "크리에이터가 '그래도 한국이 좋다'는 결론을 내리는 엔딩 장면",
+      "notes": "한국어 자막 필수 / 이 클립으로 영상 공감도 마무리"
+    }
+  ],
+  "music": {
+    "opening": "밝지만 약간 아이러니한 팝/인디 — Epidemic Sound 'Irony' 계열",
+    "act1": "가볍고 트렌디 — 숏폼 BGM 느낌",
+    "act2": "약간 우울하고 내성적인 로파이 — 현실의 무게감 표현",
+    "act3_closing": "따뜻하고 희망적인 인디 팝 — 여운 남기는 엔딩"
+  },
+  "text_overlays": [
+    {"time": "오프닝", "text": "#코리아라이프 #한국이민", "style": "TikTok 해시태그 스타일"},
+    {"time": "1막", "text": "체류 외국인 260만 명 (2025 법무부)", "style": "인포그래픽 팝업"},
+    {"time": "2막-언어", "text": "영어권 기준 유창함까지 2,200시간", "style": "강조 텍스트"},
+    {"time": "2막-돈", "text": "강남 원룸 평균 월세 130만원+", "style": "빨간 강조"},
+    {"time": "클로징", "text": "그래도, 여기가 좋으니까요.", "style": "흰색 감성 자막, 서울 야경 위"}
+  ]
+}
