@@ -1,0 +1,127 @@
+{
+  "episode": "ep012",
+  "title": "외국인이 충격받는 한국 집 구하기의 모든 것",
+  "thumbnail": {
+    "concept": "부동산 중개소 유리창 매물 스티커 앞에서 어리둥절한 표정의 외국인 실루엣. 상단에 큰 텍스트 '전세가 뭐죠?'",
+    "text_overlay": "전세가 뭐죠?",
+    "font_style": "굵은 고딕, 노란색 강조",
+    "cta_text": "한국에서 집 구하기 전 꼭 봐야 할 영상"
+  },
+  "scenes": [
+    {
+      "scene_id": "S01",
+      "section": "오프닝 훅",
+      "type": "B-ROLL",
+      "description": "부동산 중개소 유리창 빼곡한 매물 스티커 클로즈업 → 외국인이 문을 열고 들어서는 장면",
+      "visual_prompt": "Korean real estate agency window covered with rental listings stickers, prices and room sizes in Korean, foreigner opening the door and stepping inside, slightly overwhelmed expression",
+      "duration_sec": 8
+    },
+    {
+      "scene_id": "S02",
+      "section": "오프닝 훅",
+      "type": "원본영상 삽입",
+      "source_video": "What No One Tells You About Renting in Korea (Insider Secrets & Saving Tips)",
+      "video_id": "4Y-aKN4X1ME",
+      "timecode": "00:00~00:35",
+      "description": "미국에서 온 크리에이터가 한국 임대 시스템이 완전히 다르다고 설명하는 오프닝",
+      "notes": "한국어 자막 필수"
+    },
+    {
+      "scene_id": "S03",
+      "section": "1막: 전세 vs 월세",
+      "type": "인포그래픽",
+      "description": "전세 개념 도식 — 세입자↔보증금↔집주인 화살표, '2년 후 전액 반환' 강조",
+      "visual_prompt": "Simple diagram showing Jeonse system: tenant deposits large lump sum to landlord, lives rent-free for 2 years, gets full refund. Arrows and Korean/English labels. Clean minimal design.",
+      "duration_sec": 8,
+      "notes": "모션그래픽 추천 — 화살표가 순서대로 나타나는 애니메이션"
+    },
+    {
+      "scene_id": "S04",
+      "section": "1막: 전세 vs 월세",
+      "type": "인포그래픽",
+      "description": "마포 원룸 2년 총비용 비교 — 월세 2,060만 원 vs 전세 0원 (원금 회수 기준)",
+      "visual_prompt": "Side-by-side cost comparison table. Left: 월세 (monthly rent) - 500만 deposit + 65만/month = 2,060만 over 2 years. Right: 전세 (jeonse) - 150,000,000 deposit, 0/month, full refund after 2 years. Bold numbers, clean layout.",
+      "duration_sec": 7,
+      "notes": "빨간색으로 월세 총액 강조, 초록색으로 전세 0원 강조"
+    },
+    {
+      "scene_id": "S05",
+      "section": "2막: 전세사기",
+      "type": "B-ROLL",
+      "description": "뉴스 타이틀 스타일 그래픽 — 전세사기 피해 통계",
+      "visual_prompt": "News-style graphic showing statistics: '전세사기 피해자 수만명', bar chart of fraud cases by year 2022-2024, serious tone, red color scheme",
+      "duration_sec": 6,
+      "notes": "실제 뉴스 클립 사용 금지 — 자체 제작 인포그래픽으로 대체"
+    },
+    {
+      "scene_id": "S06",
+      "section": "3막: 앱 검색",
+      "type": "B-ROLL",
+      "description": "직방·다방·피터팬 앱 화면 스크롤",
+      "visual_prompt": "Screen recording of Korean real estate apps (Zigbang, Dabang, Peterfan) showing apartment listings, map view, price filters, foreigner using the app",
+      "duration_sec": 8,
+      "notes": "직접 앱 화면 녹화 — 실제 매물 정보 블러 처리 권장"
+    },
+    {
+      "scene_id": "S07",
+      "section": "3막: 부동산 방문",
+      "type": "원본영상 삽입",
+      "source_video": "$700 apartment hunting in seoul! what they don't tell foreigners.",
+      "video_id": "06J2vA_9hI0",
+      "timecode": "02:30~03:10",
+      "description": "실제로 서울에서 700달러 예산으로 여러 동네를 돌아다니며 집을 보는 장면",
+      "notes": "한국어 자막 추가"
+    },
+    {
+      "scene_id": "S08",
+      "section": "3막: 안전 체크리스트",
+      "type": "인포그래픽",
+      "description": "계약 안전 체크리스트 3단계 — ① 등기부등본 ② 확정일자 ③ 전입신고",
+      "visual_prompt": "Checklist-style infographic with 3 steps: 1) 등기부등본 확인 (check property registry), 2) 확정일자 받기 (get official date stamp), 3) 전입신고 (register move-in). Checkboxes, icons, Korean and English labels.",
+      "duration_sec": 10,
+      "notes": "각 항목이 하나씩 체크되는 애니메이션 — 시청자 기억에 남는 핵심 장면"
+    },
+    {
+      "scene_id": "S09",
+      "section": "3막: 등기부등본",
+      "type": "B-ROLL",
+      "description": "법원 인터넷등기소 웹사이트 화면 — www.iros.go.kr",
+      "visual_prompt": "Screen recording of Korean court registry website (iros.go.kr), navigating to property lookup, showing ownership and mortgage information",
+      "duration_sec": 6,
+      "notes": "직접 화면 녹화 — 개인정보 없는 샘플 매물로 시연"
+    },
+    {
+      "scene_id": "S10",
+      "section": "클로징",
+      "type": "B-ROLL",
+      "description": "새로 구한 집 창문으로 보이는 서울 골목 풍경 — 서서히 밝아지는 햇빛",
+      "visual_prompt": "View from inside a cozy Korean apartment, looking out the window at a Seoul alley, morning sunlight gradually brightening, hopeful and warm atmosphere, new beginnings feeling",
+      "duration_sec": 10,
+      "notes": "클로징 감성 장면 — 직접 촬영 강력 추천"
+    },
+    {
+      "scene_id": "S11",
+      "section": "클로징",
+      "type": "원본영상 삽입",
+      "source_video": "What No One Tells You About Renting in Korea (Insider Secrets & Saving Tips)",
+      "video_id": "4Y-aKN4X1ME",
+      "timecode": "10:20~10:55",
+      "description": "크리에이터가 한국 임대 과정의 팁을 요약하며 마무리하는 장면",
+      "notes": "한국어 자막 / 엔딩 공감 마무리용"
+    }
+  ],
+  "music": {
+    "opening": "약간 긴장감 있는 인디팝 — 미스터리 + 호기심 분위기",
+    "act1_jeonse": "가볍고 경쾌한 BGM — 개념 설명 구간 집중력 유지",
+    "act2_risk": "긴장감 있는 미니멀 BGM — 전세사기 위험 묘사",
+    "act3_guide": "밝고 실용적인 BGM — 가이드 구간 집중력 유지",
+    "closing": "따뜻하고 희망적인 어쿠스틱 — 새 집 찾은 느낌"
+  },
+  "text_overlays": [
+    {"time": "오프닝", "text": "전세가 뭐죠?", "style": "큰 굵은 텍스트, 노란색"},
+    {"time": "1막", "text": "전세(Jeonse): 세계에서 한국만의 시스템", "style": "자막 스타일"},
+    {"time": "1막", "text": "마포 원룸 전세: 1억 5천만원 보증금 / 월세 0원", "style": "인포그래픽 팝업"},
+    {"time": "2막", "text": "⚠️ 전세사기 피해: 수만 명 (2022~2024)", "style": "빨간 경고 텍스트"},
+    {"time": "3막", "text": "✅ 등기부등본 ✅ 확정일자 ✅ 전입신고", "style": "체크리스트 팝업, 초록색"}
+  ]
+}

@@ -3,6 +3,8 @@
 channel:
   name: "외국인의 한국 생활"
   language: "ko"
+  target_audience: "한국인 30~50대"  # 타겟 시청자
+  concept: "외국인이 한국에서 겪는 경험을 한국인 시청자가 재발견하는 채널"
   target_duration_minutes: 8
   target_word_count: 1300   # 한국어 기준 8분 분량
 
