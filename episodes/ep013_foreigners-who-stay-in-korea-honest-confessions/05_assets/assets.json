@@ -1,0 +1,146 @@
+{
+  "episode": "ep013",
+  "title": "한국이 너무 좋아서 못 떠나는 외국인들의 솔직한 고백",
+  "thumbnail": {
+    "concept": "웃는 외국인 여성과 서울 야경을 배경으로, 상단에 큰 텍스트 '13년째 한국에 삽니다'",
+    "text_overlay": "13년째 한국에 삽니다",
+    "font_style": "굵은 고딕, 흰색 텍스트 + 진한 주황/노란 배경 강조",
+    "cta_text": "외국인이 말하는 한국의 진짜 매력"
+  },
+  "scenes": [
+    {
+      "scene_id": "S01",
+      "section": "오프닝 훅",
+      "type": "B-ROLL",
+      "description": "서울 도심 전경 — 아파트 숲과 광화문 광장을 걷는 다양한 사람들",
+      "visual_prompt": "Aerial view of Seoul skyline with dense apartment buildings, then street level view of Gwanghwamun Square with various people walking, morning light",
+      "duration_sec": 8
+    },
+    {
+      "scene_id": "S02",
+      "section": "오프닝 훅",
+      "type": "B-ROLL",
+      "description": "유튜브 화면 캡처 느낌의 썸네일 그래픽 — 영상 제목 텍스트 화면",
+      "visual_prompt": "Screen mockup showing YouTube thumbnail style graphic with English title 'Living in Korea vs USA: What I Genuinely Miss After 13 Years', clean minimal design",
+      "duration_sec": 4
+    },
+    {
+      "scene_id": "S03",
+      "section": "오프닝 훅",
+      "type": "원본영상 삽입",
+      "source_video": "Living in Korea vs USA: What I Genuinely Miss After 13 Years",
+      "video_id": "UUVAzwA-kVc",
+      "timecode": "00:00~00:45",
+      "description": "Megan Moon 채널 — 영상 오프닝, 자기소개 및 영상 주제 소개 구간",
+      "notes": "한국어 자막 필수"
+    },
+    {
+      "scene_id": "S04",
+      "section": "1막: 그녀가 그리워하는 것",
+      "type": "B-ROLL",
+      "description": "미국 교외 주택가(넓은 마당, 드넓은 도로) → 서울 빽빽한 아파트 단지 비교 컷",
+      "visual_prompt": "Split screen or sequential cuts: Left - American suburban house with large yard, wide road, green lawn. Right - Dense Seoul apartment complexes viewed from above, tight spacing",
+      "duration_sec": 10
+    },
+    {
+      "scene_id": "S05",
+      "section": "2막: 독일인의 시각",
+      "type": "원본영상 삽입",
+      "source_video": "My Life in Korea vs Germany | The Biggest Differences After 2 Years in Korea",
+      "video_id": "bLAeP5Gh_9Q",
+      "timecode": "01:20~02:00",
+      "description": "Remy Allis — 한국 편의성(배달·편의점·교통)에 대한 반응 구간",
+      "notes": "한국어 자막 필수. 배달/편의점 언급 구간 선택"
+    },
+    {
+      "scene_id": "S06",
+      "section": "2막: 독일인의 시각",
+      "type": "B-ROLL",
+      "description": "새벽 배달 오토바이, 24시간 편의점 불빛, 지하철 노선도 스크롤",
+      "visual_prompt": "Three-shot sequence: delivery motorcycle at night with glowing CU logo, brightly lit 24-hour convenience store at 3am, close-up of Seoul metro map",
+      "duration_sec": 9
+    },
+    {
+      "scene_id": "S07",
+      "section": "3막: 한국에서 발견한 것들",
+      "type": "B-ROLL",
+      "description": "새벽 서울 거리, 혼자 걷는 여성, 편안한 표정",
+      "visual_prompt": "Young woman walking alone on safe Seoul street at night, relaxed expression, well-lit streets, other pedestrians in background, clean and peaceful atmosphere",
+      "duration_sec": 7
+    },
+    {
+      "scene_id": "S08",
+      "section": "3막: 한국에서 발견한 것들",
+      "type": "원본영상 삽입",
+      "source_video": "Living in Korea vs USA: What I Genuinely Miss After 13 Years",
+      "video_id": "UUVAzwA-kVc",
+      "timecode": "07:30~08:10",
+      "description": "Megan Moon — 한국의 '정(情)' 문화에 대한 감동적인 증언 구간",
+      "notes": "한국어 자막 필수. 감정적으로 가장 임팩트 있는 구간"
+    },
+    {
+      "scene_id": "S09",
+      "section": "4막: 결론",
+      "type": "B-ROLL",
+      "description": "하늘 위 비행기 — 두 나라를 연결하는 이미지",
+      "visual_prompt": "Airplane in blue sky with clouds, transitional shot suggesting travel between countries, peaceful and hopeful mood",
+      "duration_sec": 5
+    },
+    {
+      "scene_id": "S10",
+      "section": "아웃트로",
+      "type": "B-ROLL",
+      "description": "서울 야경 — 한강 다리 위, 반짝이는 도심 불빛",
+      "visual_prompt": "Seoul night skyline from Han River bridge, city lights reflecting on water, glittering buildings, beautiful and emotional ending shot",
+      "duration_sec": 10
+    },
+    {
+      "scene_id": "S11",
+      "section": "아웃트로",
+      "type": "CTA",
+      "description": "채널 로고 + 구독 버튼 CTA 화면",
+      "visual_prompt": "Channel end screen with subscribe button animation, previous episode thumbnails, channel branding",
+      "duration_sec": 20
+    }
+  ],
+  "original_videos_used": [
+    {
+      "title": "Living in Korea vs USA: What I Genuinely Miss After 13 Years",
+      "channel": "Megan Moon",
+      "video_id": "UUVAzwA-kVc",
+      "url": "https://www.youtube.com/watch?v=UUVAzwA-kVc",
+      "usage_count": 2,
+      "timecodes": ["00:00~00:45", "07:30~08:10"]
+    },
+    {
+      "title": "My Life in Korea vs Germany | The Biggest Differences After 2 Years in Korea",
+      "channel": "Remy Allis",
+      "video_id": "bLAeP5Gh_9Q",
+      "url": "https://www.youtube.com/watch?v=bLAeP5Gh_9Q",
+      "usage_count": 1,
+      "timecodes": ["01:20~02:00"]
+    }
+  ],
+  "bgm_suggestions": [
+    {
+      "section": "오프닝",
+      "mood": "궁금증 유발, 감성적",
+      "note": "밝지 않은 어쿠스틱 또는 가벼운 피아노"
+    },
+    {
+      "section": "1막~2막",
+      "mood": "가볍고 흥미롭게",
+      "note": "경쾌한 배경음악, 나레이션 방해하지 않는 볼륨"
+    },
+    {
+      "section": "3막~4막",
+      "mood": "따뜻하고 감동적",
+      "note": "감성적인 피아노 또는 스트링"
+    },
+    {
+      "section": "아웃트로",
+      "mood": "여운, 잔잔",
+      "note": "페이드 아웃되는 감성 BGM"
+    }
+  ]
+}

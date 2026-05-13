@@ -1,0 +1,162 @@
+{
+  "episode": "ep014",
+  "title": "유럽 1위 도시를 떠나 한국을 택한 외국인들의 이야기",
+  "thumbnail": {
+    "concept": "비엔나 건물 사진과 서울 빌딩 사진을 반반 나눈 화면, 중앙에 큰 화살표와 '왜 한국을 택했을까?' 텍스트",
+    "text_overlay": "왜 굳이 한국이었을까?",
+    "font_style": "굵은 고딕, 흰색 + 파란 배경 강조",
+    "cta_text": "선진국보다 한국을 선택한 외국인들"
+  },
+  "scenes": [
+    {
+      "scene_id": "S01",
+      "section": "오프닝 훅",
+      "type": "B-ROLL",
+      "description": "오스트리아 비엔나 도심 — 웅장한 유럽 건물, 깔끔한 거리, 카페 테라스",
+      "visual_prompt": "Vienna Austria downtown: grand European architecture, clean streets, outdoor cafe terrace with people sitting leisurely, warm golden light",
+      "duration_sec": 8
+    },
+    {
+      "scene_id": "S02",
+      "section": "오프닝 훅",
+      "type": "B-ROLL",
+      "description": "인천공항 도착 게이트 — 외국인 탑승객들",
+      "visual_prompt": "Incheon International Airport arrival gate, diverse foreign passengers with luggage, welcome signs in Korean and English, busy and modern atmosphere",
+      "duration_sec": 6
+    },
+    {
+      "scene_id": "S03",
+      "section": "오프닝 훅",
+      "type": "원본영상 삽입",
+      "source_video": "\"여기 왜 왔어!?\" 11년 전에 유럽, 미국 대신 한국 선택한 이유",
+      "video_id": "6XE5UPmZEyk",
+      "timecode": "00:00~00:50",
+      "description": "Kady 케이디 — 오프닝, 주변 사람들의 '왜 한국에?' 질문에 대한 반응 구간",
+      "notes": "한국어 자막 필수. 한국어로 진행되는 영상이므로 내용 확인 필요"
+    },
+    {
+      "scene_id": "S04",
+      "section": "1막: 비엔나 vs 한국",
+      "type": "B-ROLL",
+      "description": "유럽 카페 — 여유롭게 앉아 있는 사람들, 느린 분위기",
+      "visual_prompt": "European cafe scene: people sitting leisurely for hours, no rush, soft lighting, coffee cups, relaxed atmosphere. Contrast with busy Korea.",
+      "duration_sec": 7
+    },
+    {
+      "scene_id": "S05",
+      "section": "1막: 비엔나 vs 한국",
+      "type": "B-ROLL",
+      "description": "서울 강남 — 빠르게 움직이는 사람들, 빌딩 숲",
+      "visual_prompt": "Seoul Gangnam district: people walking fast, dense skyscrapers, busy streets, neon signs, dynamic and energetic urban atmosphere",
+      "duration_sec": 7
+    },
+    {
+      "scene_id": "S06",
+      "section": "1막: 비엔나 vs 한국",
+      "type": "원본영상 삽입",
+      "source_video": "\"여기 왜 왔어!?\" 11년 전에 유럽, 미국 대신 한국 선택한 이유",
+      "video_id": "6XE5UPmZEyk",
+      "timecode": "02:30~03:15",
+      "description": "Kady — '열심히 하면 될 것 같은 나라' 한국을 선택한 이유 설명 구간",
+      "notes": "한국어 자막 필수"
+    },
+    {
+      "scene_id": "S07",
+      "section": "2막: 사랑으로 한국 이주",
+      "type": "B-ROLL",
+      "description": "인천공항 입국장 — 기다리는 사람들, 재회하는 커플",
+      "visual_prompt": "Incheon Airport arrival hall: people waiting with flowers and signs, emotional reunion between couple, hugging, joyful expressions",
+      "duration_sec": 8
+    },
+    {
+      "scene_id": "S08",
+      "section": "2막: 사랑으로 한국 이주",
+      "type": "원본영상 삽입",
+      "source_video": "FINALLY MOVING TO KOREA✈️ TO LIVE WITH MY HUSBAND!",
+      "video_id": "nnl04TksCfA",
+      "timecode": "00:30~01:10",
+      "description": "Minnie — 드디어 한국 이주, 설레임과 두려움을 솔직하게 표현하는 구간",
+      "notes": "한국어 자막 필수. 감정적으로 임팩트 있는 구간"
+    },
+    {
+      "scene_id": "S09",
+      "section": "3막: 한국의 진짜 매력",
+      "type": "B-ROLL",
+      "description": "야간 학원가 — 불 켜진 건물들, 가방 메고 걷는 학생들",
+      "visual_prompt": "Korean hagwon (cram school) district at night: buildings with bright lights showing academy signs, students walking with heavy backpacks, busy educational atmosphere",
+      "duration_sec": 7
+    },
+    {
+      "scene_id": "S10",
+      "section": "3막: 한국의 진짜 매력",
+      "type": "B-ROLL",
+      "description": "배달 문화 — 스마트폰 알림, 배달 오토바이, 빠른 서비스",
+      "visual_prompt": "Three-shot: smartphone showing delivery app notification, delivery motorcycle speeding through Seoul streets at night, person opening door to receive food, satisfied expression",
+      "duration_sec": 8
+    },
+    {
+      "scene_id": "S11",
+      "section": "4막 + 아웃트로",
+      "type": "B-ROLL",
+      "description": "서울 도심 새벽 출근길 — 활기찬 사람들",
+      "visual_prompt": "Seoul morning commute: people walking briskly toward subway stations, determined expressions, city coming alive, dynamic energy of a working city",
+      "duration_sec": 7
+    },
+    {
+      "scene_id": "S12",
+      "section": "아웃트로",
+      "type": "B-ROLL",
+      "description": "남산타워에서 바라본 서울 야경",
+      "visual_prompt": "Seoul night skyline viewed from Namsan Tower: glittering city lights stretching to horizon, beautiful and inspiring cityscape, emotional closing shot",
+      "duration_sec": 10
+    },
+    {
+      "scene_id": "S13",
+      "section": "아웃트로",
+      "type": "CTA",
+      "description": "채널 엔딩 화면 — 구독 버튼 + 이전 에피소드 썸네일",
+      "visual_prompt": "Channel end screen with subscribe button, two previous episode thumbnails visible, clean branding",
+      "duration_sec": 20
+    }
+  ],
+  "original_videos_used": [
+    {
+      "title": "\"여기 왜 왔어!?\" 11년 전에 유럽, 미국 대신 한국 선택한 이유",
+      "channel": "Kady 케이디",
+      "video_id": "6XE5UPmZEyk",
+      "url": "https://www.youtube.com/watch?v=6XE5UPmZEyk",
+      "usage_count": 2,
+      "timecodes": ["00:00~00:50", "02:30~03:15"]
+    },
+    {
+      "title": "FINALLY MOVING TO KOREA✈️ TO LIVE WITH MY HUSBAND!",
+      "channel": "Minnie",
+      "video_id": "nnl04TksCfA",
+      "url": "https://www.youtube.com/watch?v=nnl04TksCfA",
+      "usage_count": 1,
+      "timecodes": ["00:30~01:10"]
+    }
+  ],
+  "bgm_suggestions": [
+    {
+      "section": "오프닝",
+      "mood": "신비롭고 궁금증 유발",
+      "note": "유럽풍 클래식 → 한국적 리듬으로 전환하는 편곡 가능"
+    },
+    {
+      "section": "1막~2막",
+      "mood": "희망적이고 설레는",
+      "note": "경쾌한 어쿠스틱, 이주/새 출발 느낌"
+    },
+    {
+      "section": "3막",
+      "mood": "활기차고 역동적",
+      "note": "빠른 리듬, 한국의 에너지 표현"
+    },
+    {
+      "section": "4막~아웃트로",
+      "mood": "따뜻하고 감동적",
+      "note": "피아노 or 스트링 감성, 페이드 아웃"
+    }
+  ]
+}

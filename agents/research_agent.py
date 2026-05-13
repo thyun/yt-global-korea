@@ -541,7 +541,10 @@ class ResearchAgent(BaseAgent):
         for i, v in enumerate(ranked, 1):
             v["rank"] = i
 
-        trend_analysis = self._analyze_trends(ranked)
+        try:
+            trend_analysis = self._analyze_trends(ranked)
+        except Exception:
+            trend_analysis = ""
         return ranked
 
     def _analyze_trends(self, ranked_videos: list[dict]) -> str:
@@ -553,23 +556,20 @@ class ResearchAgent(BaseAgent):
 이 목록에서 보이는 콘텐츠 트렌드, 인기 주제 패턴, 시청자 관심사를 300자 이내로 분석해 주세요.
 
 {chr(10).join(f'{i+1}. {t}' for i, t in enumerate(titles))}"""
-        return self.call_llm(system_prompt, user_prompt)
+        try:
+            return self.call_llm(system_prompt, user_prompt)
+        except Exception:
+            return f"트렌드 분석 생략 (LLM 미사용). 상위 영상 제목: {', '.join(titles[:5])}"
 
     # ------------------------------------------------------------------ #
     # Transcript 다운로드                                                   #
     # ------------------------------------------------------------------ #
     def _download_transcripts(self, result: dict) -> dict:
-        from youtube_transcript_api import YouTubeTranscriptApi, NoTranscriptFound, TranscriptsDisabled
-
-        preferred_langs = self.settings["research"].get(
-            "preferred_transcript_languages", ["en", "en-US", "en-GB"]
-        )
         transcript_dir = self.episode_dir / "01_research" / "transcripts"
         transcript_dir.mkdir(parents=True, exist_ok=True)
 
         console.print(f"\n  [bold]Transcript 다운로드 시작...[/bold]")
         success, skip, fail = 0, 0, 0
-        ytt = YouTubeTranscriptApi()
 
         for video in result.get("videos", []):
             vid_id = video.get("video_id", "")
@@ -579,74 +579,26 @@ class ResearchAgent(BaseAgent):
                 skip += 1
                 continue
 
-            try:
-                transcript_list = ytt.list(vid_id)
+            # 1차 시도: youtube-transcript-api
+            ok, lang = self._try_ytt(vid_id, transcript_dir)
+            if not ok:
+                # 2차 시도: yt-dlp (Chrome impersonation + node JS)
+                ok, lang = self._try_ytdlp(vid_id, transcript_dir)
 
-                transcript = None
-                used_lang = None
-                for lang in preferred_langs:
-                    try:
-                        transcript = transcript_list.find_transcript([lang])
-                        used_lang = lang
-                        break
-                    except Exception:
-                        pass
-
-                if transcript is None:
-                    try:
-                        transcript = transcript_list.find_generated_transcript(["en"])
-                        used_lang = "en-auto"
-                    except Exception:
-                        pass
-
-                if transcript is None:
-                    for t in transcript_list:
-                        if not t.language_code.startswith("ko"):
-                            transcript = t
-                            used_lang = t.language_code
-                            break
-
-                if transcript is None:
-                    raise NoTranscriptFound(vid_id, [], {})
-
-                entries = transcript.fetch()
-                full_text = " ".join(e.text for e in entries)
-
-                txt_path = transcript_dir / f"{vid_id}_transcript.txt"
-                txt_path.write_text(full_text, encoding="utf-8")
-
-                json_path = transcript_dir / f"{vid_id}_transcript.json"
-                json_path.write_text(
-                    json.dumps(
-                        {"video_id": vid_id, "language": used_lang,
-                         "entries": [{"text": e.text, "start": e.start, "duration": e.duration} for e in entries]},
-                        ensure_ascii=False, indent=2,
-                    ),
-                    encoding="utf-8",
-                )
-
+            if ok:
                 video["has_transcript"] = True
-                video["transcript_language"] = used_lang
+                video["transcript_language"] = lang
                 console.print(
                     f"  [green]✓[/green] [{video.get('rank', '?')}위] "
-                    f"{video.get('title', '')[:40]} ({used_lang})"
+                    f"{video.get('title', '')[:40]} ({lang})"
                 )
                 success += 1
-
-            except (NoTranscriptFound, TranscriptsDisabled):
+            else:
                 video["has_transcript"] = False
                 video["transcript_language"] = None
                 console.print(
                     f"  [yellow]—[/yellow] [{video.get('rank', '?')}위] "
                     f"{video.get('title', '')[:40]} (자막 없음)"
-                )
-                fail += 1
-            except Exception as e:
-                video["has_transcript"] = False
-                video["transcript_language"] = None
-                console.print(
-                    f"  [red]✗[/red] [{video.get('rank', '?')}위] "
-                    f"{video.get('title', '')[:40]}: {e}"
                 )
                 fail += 1
 
@@ -656,6 +608,127 @@ class ResearchAgent(BaseAgent):
         )
         result["transcript_stats"] = {"success": success, "no_transcript": fail, "skipped": skip}
         return result
+
+    def _try_ytt(self, vid_id: str, transcript_dir) -> tuple[bool, str | None]:
+        """youtube-transcript-api로 transcript 다운로드 시도."""
+        from youtube_transcript_api import YouTubeTranscriptApi, NoTranscriptFound, TranscriptsDisabled
+        preferred_langs = self.settings["research"].get(
+            "preferred_transcript_languages", ["en", "en-US", "en-GB"]
+        )
+        try:
+            ytt = YouTubeTranscriptApi()
+            transcript_list = ytt.list(vid_id)
+
+            transcript = None
+            used_lang = None
+            for lang in preferred_langs:
+                try:
+                    transcript = transcript_list.find_transcript([lang])
+                    used_lang = lang
+                    break
+                except Exception:
+                    pass
+
+            if transcript is None:
+                try:
+                    transcript = transcript_list.find_generated_transcript(["en"])
+                    used_lang = "en-auto"
+                except Exception:
+                    pass
+
+            if transcript is None:
+                for t in transcript_list:
+                    if not t.language_code.startswith("ko"):
+                        transcript = t
+                        used_lang = t.language_code
+                        break
+
+            if transcript is None:
+                return False, None
+
+            entries = transcript.fetch()
+            self._save_transcript(vid_id, used_lang, entries, transcript_dir)
+            return True, used_lang
+
+        except (NoTranscriptFound, TranscriptsDisabled):
+            return False, None
+        except Exception:
+            return False, None
+
+    def _try_ytdlp(self, vid_id: str, transcript_dir) -> tuple[bool, str | None]:
+        """yt-dlp (Chrome impersonation + node JS) 로 자막 다운로드 시도."""
+        import subprocess, tempfile, glob
+        try:
+            with tempfile.TemporaryDirectory() as tmpdir:
+                cmd = [
+                    "yt-dlp",
+                    "--write-auto-sub", "--sub-lang", "en,ko",
+                    "--sub-format", "json3",
+                    "--skip-download", "--no-check-formats",
+                    "--js-runtimes", "node",
+                    "--remote-components", "ejs:github",
+                    "--impersonate", "Chrome-136",
+                    "--cookies-from-browser", "chrome",
+                    "--quiet",
+                    "--output", f"{tmpdir}/sub_%(id)s",
+                    f"https://www.youtube.com/watch?v={vid_id}",
+                ]
+                subprocess.run(cmd, capture_output=True, timeout=60)
+
+                # Find downloaded subtitle file
+                files = glob.glob(f"{tmpdir}/sub_{vid_id}.*.json3")
+                if not files:
+                    return False, None
+
+                sub_file = files[0]
+                lang_code = sub_file.split(".")[-2]  # e.g. "en" or "ko"
+
+                with open(sub_file, encoding="utf-8") as f:
+                    data = json.load(f)
+
+                entries = []
+                for event in data.get("events", []):
+                    start = event.get("tStartMs", 0) / 1000.0
+                    dur = event.get("dDurationMs", 0) / 1000.0
+                    segs = event.get("segs", [])
+                    text = "".join(s.get("utf8", "") for s in segs).strip()
+                    if text:
+                        entries.append({"text": text, "start": start, "duration": dur})
+
+                if not entries:
+                    return False, None
+
+                self._save_transcript_raw(vid_id, lang_code, entries, transcript_dir)
+                return True, f"{lang_code}-ytdlp"
+
+        except Exception:
+            return False, None
+
+    def _save_transcript(self, vid_id: str, lang: str, entries, transcript_dir) -> None:
+        """youtube-transcript-api FetchedTranscriptSnippet 목록을 저장."""
+        full_text = " ".join(e.text for e in entries)
+        (transcript_dir / f"{vid_id}_transcript.txt").write_text(full_text, encoding="utf-8")
+        (transcript_dir / f"{vid_id}_transcript.json").write_text(
+            json.dumps(
+                {"video_id": vid_id, "language": lang,
+                 "entries": [{"text": e.text, "start": e.start, "duration": e.duration} for e in entries]},
+                ensure_ascii=False, indent=2,
+            ),
+            encoding="utf-8",
+        )
+
+    def _save_transcript_raw(self, vid_id: str, lang: str, entries: list[dict], transcript_dir) -> None:
+        """dict 형식의 entries를 저장 (yt-dlp 결과용)."""
+        full_text = " ".join(e["text"] for e in entries)
+        (transcript_dir / f"{vid_id}_transcript.txt").write_text(full_text, encoding="utf-8")
+        (transcript_dir / f"{vid_id}_transcript.json").write_text(
+            json.dumps(
+                {"video_id": vid_id, "language": lang, "entries": entries},
+                ensure_ascii=False, indent=2,
+            ),
+            encoding="utf-8",
+        )
+
 
     # ------------------------------------------------------------------ #
     # 결과 출력                                                             #
