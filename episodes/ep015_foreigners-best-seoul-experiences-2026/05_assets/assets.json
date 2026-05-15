@@ -1,0 +1,107 @@
+{
+  "episode_id": "ep015",
+  "title": "외국인 유튜버가 꼽은 2026 서울 최고의 경험 15가지",
+  "reference_video": {
+    "video_id": "d-6U_KHwsc0",
+    "channel": "World Wild Hearts",
+    "url": "https://www.youtube.com/watch?v=d-6U_KHwsc0"
+  },
+  "original_video_clips": [
+    {
+      "clip_id": 1,
+      "section": "섹션 1 — 강남 소개",
+      "timecode": "01:14~01:48",
+      "description": "강남 소개 — COEX 별마당 도서관, K-Star Road 곰돌이 조형물",
+      "subtitle": "한국어 자막 필요",
+      "note": "transcript 기반 실제 타임코드"
+    },
+    {
+      "clip_id": 2,
+      "section": "섹션 2 — 한강 드론쇼",
+      "timecode": "02:51~03:32",
+      "description": "한강 드론쇼 + 반포대교 달빛무지개분수 설명",
+      "subtitle": "한국어 자막 필요",
+      "note": "transcript 기반 실제 타임코드"
+    },
+    {
+      "clip_id": 3,
+      "section": "섹션 3 — 경복궁",
+      "timecode": "11:53~12:31",
+      "description": "경복궁 5대 궁궐 소개, 한복 입으면 무료 입장 설명",
+      "subtitle": "한국어 자막 필요",
+      "note": "transcript 기반 실제 타임코드"
+    },
+    {
+      "clip_id": 4,
+      "section": "섹션 4 — 구글맵/네이버",
+      "timecode": "18:30~18:46",
+      "description": "구글맵 대중교통 안 됨 → 네이버 지도 필수 안내",
+      "subtitle": "한국어 자막 필요",
+      "note": "transcript 기반 실제 타임코드"
+    }
+  ],
+  "broll_list": [
+    {
+      "scene": "인트로·아웃트로",
+      "shots": [
+        "서울 야경 항공 뷰 (N서울타워·한강 조망)",
+        "한강변 풍경 (낮·저녁)",
+        "분주한 지하철역 플랫폼"
+      ]
+    },
+    {
+      "scene": "섹션 1 — 강남",
+      "shots": [
+        "COEX 별마당 도서관 내부 (높은 천장, 책벽)",
+        "강남 K-Star Road 곰돌이(어피치) 조형물",
+        "선릉 왕릉 산책로 (숲 속)"
+      ]
+    },
+    {
+      "scene": "섹션 2 — 한강",
+      "shots": [
+        "한강 드론쇼 야경 영상 또는 사진",
+        "반포대교 달빛무지개분수 (야간)",
+        "한강 자전거 라이딩 (낮)"
+      ]
+    },
+    {
+      "scene": "섹션 3 — 경복궁·익선동",
+      "shots": [
+        "경복궁 근정전 + 한복 입은 관람객",
+        "창덕궁 후원 자연 풍경",
+        "익선동 한옥 골목 (낮, 좁은 골목)",
+        "익선동 한옥 카페 야외 테이블"
+      ]
+    },
+    {
+      "scene": "섹션 4 — 교통 팁",
+      "shots": [
+        "스마트폰 네이버 지도 앱 화면",
+        "지하철 교통카드 환승 게이트",
+        "CU 또는 GS25 편의점 교통카드 충전",
+        "서울숲 사슴 방목장 (보너스 컷)"
+      ]
+    }
+  ],
+  "music": {
+    "intro_outro": "밝고 경쾌한 인스트루멘탈, BPM 100~110, 서울 도시 감성",
+    "section_1_2": "활기차고 현대적인 팝 인스트루멘탈",
+    "section_3": "따뜻하고 감성적인 어쿠스틱, 한국 전통 악기 요소 가미",
+    "section_4": "경쾌하고 유머러스한 톤",
+    "license": "YouTube Audio Library 또는 Pixabay Music 무료 사용 권장"
+  },
+  "thumbnail": {
+    "concept": "한강 드론쇼 야경 배경 + 한국인 30~50대가 공감할 텍스트",
+    "main_text": "서울에서 이걸 못 해봤다고?",
+    "sub_text": "외국인이 꼽은 서울 BEST 15",
+    "color_scheme": "어두운 밤하늘(네이비) + 드론 빛(골드·화이트) + 한글 텍스트(흰색)",
+    "tip": "드론쇼 야경 이미지가 없으면 반포대교 달빛무지개분수 사용"
+  },
+  "copyright_checklist": [
+    "World Wild Hearts 채널 원본영상 4개 클립 사용 — Fair Use(교육·비평 목적) 검토",
+    "각 클립 40초 이내 유지",
+    "설명란에 원본영상 출처 링크 필수 기재: https://www.youtube.com/watch?v=d-6U_KHwsc0",
+    "필요 시 World Wild Hearts 채널에 사용 허가 요청 권장"
+  ]
+}

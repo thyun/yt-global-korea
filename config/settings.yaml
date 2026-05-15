@@ -20,12 +20,16 @@ llm:
 
 research:
   youtube_search_queries:
-    - "foreigner life in Korea vlog"
+    - "seoul trip foreigner"
+    - "visiting korea first time reaction"
+    - "korea travel"
+    - "foreigner life in Korea"
     - "living in Korea as a foreigner"
-    - "culture shock Korea foreigner"
     - "expat Korea daily life"
-    - "American living in Korea"
-    - "European living in Korea"
+    - "korea food tour foreigner"
+    - "korean culture experience foreigner"
+    - "moving to korea experience"
+    - "korea vs home country comparison"
   excluded_languages:
     - "ko"          # 한국어 영상 제외
   preferred_transcript_languages:
